@@ -11,7 +11,7 @@ export default {
       { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.svg" }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -40,8 +40,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: "https://v3-api.techdiary.dev"
-    // baseURL: "http://techdiary.test"
+    baseURL: process.env.NUXT_ENV_APP_URL_CLIENT
   },
 
   tailwindcss: {
