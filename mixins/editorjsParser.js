@@ -1,34 +1,4 @@
 import md from "~/mixins/MarkdownParser";
-// import ImageWidget from '~/components/ImageWidget.vue'
-// import Vue from 'vue'
-``;
-class ArticleImage {
-  constructor(imageUrl) {
-    this.imageUrl = imageUrl;
-  }
-
-  checkHost() {
-    const url = new URL(this.imageUrl);
-    return url.host;
-  }
-  isCloudinary() {
-    return this.checkHost() === "res.cloudinary.com";
-  }
-  cloudinaryPublicId() {
-    if (!this.isCloudinary)
-      throw new Error("This is not a cloudinary image url");
-    return this.imageUrl
-      .split("/")
-      .slice(-2)
-      .join("/");
-  }
-
-  getImageUrl() {
-    return this.isCloudinary()
-      ? $cloudinary.url(this.cloudinaryPublicId())
-      : "";
-  }
-}
 
 export default {
   methods: {
@@ -136,9 +106,9 @@ export default {
            * --------------------------------------------------
            */
           html += `<blockquote>
-        <p class='quotation'>
-          ${block.data.text}
-        </p>
+            <p class='quotation'>
+              ${block.data.text}
+            </p>
 
         ${
           block.data.caption !== null
