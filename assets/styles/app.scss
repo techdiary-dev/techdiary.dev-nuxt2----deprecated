@@ -3,15 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply font-KohinoorBangla;
-  }
   *::selection {
     @apply bg-primary text-gray-800;
   }
-
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 3px;
   }
 
   ::-webkit-scrollbar-track {
@@ -24,6 +20,13 @@
 }
 
 @layer utilities {
+  .wrapper {
+    max-width: 1200px;
+    width: 95%;
+    margin: auto;
+    position: relative;
+  }
+
   .text-dark {
     @apply text-gray-900 dark:text-gray-200;
   }
@@ -60,24 +63,34 @@
   }
 }
 
-@layer components {
-  .wrapper {
-    max-width: 1170px;
-    width: 95%;
-    margin: auto;
-  }
-}
-
 @keyframes blink {
   50% {
     border-color: #ff0000;
   }
 }
 
+.swal-footer {
+  background-color: rgb(245, 248, 250);
+  margin-top: 32px;
+  border-top: 1px solid #e9eef1;
+  overflow: hidden;
+}
 @import "base";
-// @import 'content-typography';
+@import "content-typography";
 @import "markdown";
-// @import 'editor';
-// @import 'loader';
+@import "editor";
+@import "loader";
 @import "fonts";
-// @import 'loader';
+@import "loader";
+
+.top-full {
+  top: 100%;
+}
+
+.ce-block--selected .ce-block__content {
+  @apply dark:bg-gray-800;
+}
+
+.techdiary-body {
+  @apply dark:bg-gray-900 font-KohinoorBangla;
+}

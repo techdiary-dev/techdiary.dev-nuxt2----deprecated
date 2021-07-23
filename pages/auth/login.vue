@@ -9,7 +9,7 @@
         <p class="text-gray-600 ">ইউজারনেম / ইমেইল</p>
         <input
           type="text"
-          class="w-full border-gray-300 rounded-sm border-1 focus:ring-1 focus:ring-gray-600"
+          class="w-full border-gray-300 rounded border-1 focus:ring-1 focus:ring-gray-600"
         />
       </label>
 
@@ -21,7 +21,12 @@
         />
       </label>
 
-      <button class="flex-none py-2 text-white bg-gray-800 rounded-sm">
+      <label class="flex items-center gap-3 ">
+        <input type="checkbox" />
+        <p>Remember Me</p>
+      </label>
+
+      <button class="flex-none py-2 text-white rounded-sm bg-primary">
         লগইন
       </button>
     </div>

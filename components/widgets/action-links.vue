@@ -3,7 +3,7 @@
     <a href="#" class="action-links__link">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5 action-links__icon"
+        class="w-5 h-5 action-links__icon"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -25,7 +25,7 @@
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        class="h-5 w-5 action-links__icon"
+        class="w-5 h-5 action-links__icon"
       >
         <path
           stroke-linecap="round"
@@ -41,7 +41,7 @@
     <a href="#" class="action-links__link">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5 action-links__icon"
+        class="w-5 h-5 action-links__icon"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -64,7 +64,10 @@
   @apply flex flex-col space-y-2;
 
   &__link {
-    @apply flex space-x-1 text-base hover:bg-gray-100 transition duration-100 items-center;
+    @apply flex items-center gap-1;
+    @apply text-base font-light;
+    @apply hover:bg-gray-100 transition duration-100;
+    @apply p-1 rounded-sm;
   }
   &__icon {
     @apply text-gray-700;

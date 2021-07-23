@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-col gap-5">
     <ArticleCard
       v-for="article in articles"
       :key="article.id"

@@ -34,7 +34,8 @@ export default {
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
     // https://go.nuxtjs.dev/content
-    "@nuxt/content"
+    "@nuxt/content",
+    "@nuxtjs/cloudinary"
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -51,5 +52,10 @@ export default {
   content: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {},
+
+  cloudinary: {
+    cloudName: process.env.NUXT_APP_CLOUDINARY_CLOUDNAME,
+    useComponent: true
+  }
 };

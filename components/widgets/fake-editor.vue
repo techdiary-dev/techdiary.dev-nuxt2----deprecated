@@ -24,7 +24,7 @@
 
     <!--  -->
     <div
-      class=" flex p-5 mt-2 text-lg transition-all duration-150 bg-gray-100 border border-gray-200 rounded-md cursor-pointer dark:border-gray-500 dark:bg-gray-600 hover:bg-white"
+      class="flex p-5 mt-2 text-lg transition-all duration-150 bg-gray-100 border border-gray-200 rounded-md cursor-pointer dark:border-gray-500 dark:bg-gray-600 hover:bg-white"
     >
       <svg
         viewBox="0 0 512 512"
