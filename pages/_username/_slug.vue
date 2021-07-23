@@ -1,7 +1,8 @@
 <template>
   <div class="layout wrapper">
     <main class="layout__main">
-      <div v-if="!$fetchState.pending && article">
+      <Loader v-if="$fetchState.pending" />
+      <div v-else>
         <alert v-if="!article.isPublished" class="mb-8">
           অপ্রকাশিত ডায়েরি, তবে আপনি চাইলে URL এর মাধ্যমে যে কাউকে দেখাতে
           পারবেন।
@@ -9,12 +10,17 @@
             অপ্রকাশিত ডায়েরি প্রথম পাতায় দেখানো হবে না।
           </template>
         </alert>
+        <div>
+          <img :src="article.thumbnail" :alt="article.title" />
+        </div>
+        <article v-html="article.body" />
       </div>
     </main>
   </div>
 </template>
 
 <script>
+import parser from "~/helpers/editorjsParser";
 export default {
   data() {
     return {
@@ -29,8 +35,15 @@ export default {
         `api/articles/${this.$route.params.slug}`
       );
       this.article = article.data;
+
+      // let x = parser(article.data.body);
+
+      // console.log(x);
+
+      // console.log(this.html);
       this.reactions = article.data.reactions;
     } catch (error) {
+      console.log(error);
       this.$nuxt.error({
         statusCode: 400,
         message: "ডায়েরি খুঁজে পাওয়া যায়নি"
