@@ -9,7 +9,7 @@
         :title="tag.label"
       >
         <nuxt-link
-          :to="{ name: 'tags-name', params: { name: tag.label } }"
+          :to="{ name: 'tags-tag', params: { tag: tag.label } }"
           class="tag__link"
         >
           <img class="tag__icon" :src="tag.icon" :alt="tag.label" />
@@ -20,7 +20,7 @@
       <button
         v-if="length == 10"
         @click="more"
-        class=" self-start text-gray-500 text-sm hover:text-gray-600"
+        class="self-start text-sm text-gray-500 hover:text-gray-600"
       >
         More...
       </button>

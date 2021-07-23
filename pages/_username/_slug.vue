@@ -9,33 +9,13 @@
             অপ্রকাশিত ডায়েরি প্রথম পাতায় দেখানো হবে না।
           </template>
         </alert>
-
-        <div v-if="article.thumbnail" class="overflow-hidden rounded-md">
-          <image-widget
-            crop="scale"
-            width="1200"
-            fetchFormat="auto"
-            quality="auto"
-            loading="lazy"
-            :imageUrl="article.thumbnail"
-            :alt="article.title"
-          />
-        </div>
-
-        <article
-          class="my-6 content-typography font-KohinoorBangla text-dark max-w-none"
-        >
-          <div v-html="html"></div>
-        </article>
       </div>
     </main>
   </div>
 </template>
 
 <script>
-import editorjsParser from "~/mixins/editorjsParser";
 export default {
-  mixins: [editorjsParser],
   data() {
     return {
       article: null,
@@ -48,7 +28,6 @@ export default {
       const { data: article } = await this.$axios.get(
         `api/articles/${this.$route.params.slug}`
       );
-      this.html = this.editorJsParser(article.data.body);
       this.article = article.data;
       this.reactions = article.data.reactions;
     } catch (error) {

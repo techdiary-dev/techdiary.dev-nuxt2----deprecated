@@ -1,10 +1,13 @@
 <template>
-  <div class="flex flex-col gap-5">
-    <ArticleCard
-      v-for="article in articles"
-      :key="article.id"
-      :article="article"
-    />
+  <div>
+    <widgets-fake-editor />
+    <div class="flex flex-col gap-5 mt-4">
+      <ArticleCard
+        v-for="article in articles"
+        :key="article.id"
+        :article="article"
+      />
+    </div>
   </div>
 </template>
 

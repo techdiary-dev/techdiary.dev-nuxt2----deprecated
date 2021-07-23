@@ -11,10 +11,7 @@
       </aside>
 
       <main class="layout__main">
-        <widgets-fake-editor />
-        <div class="mt-5 ">
-          <Nuxt />
-        </div>
+        <Nuxt />
       </main>
 
       <aside class="layout__aside layout__aside--right">

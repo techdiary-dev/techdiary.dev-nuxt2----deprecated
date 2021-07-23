@@ -17,6 +17,10 @@
   ::-webkit-scrollbar-thumb {
     @apply bg-gray-600 rounded-lg;
   }
+
+  body {
+    @apply font-KohinoorBangla;
+  }
 }
 
 @layer utilities {
@@ -89,8 +93,4 @@
 
 .ce-block--selected .ce-block__content {
   @apply dark:bg-gray-800;
-}
-
-.techdiary-body {
-  @apply dark:bg-gray-900 font-KohinoorBangla;
 }

@@ -14,7 +14,7 @@
       </aside>
 
       <main
-        class="px-4 pt-2 border-l border-gray-200 lg:col-span-6 md:col-span-9"
+        class="px-4 pt-2 border-l border-gray-200 lg:col-span-10 md:col-span-9"
       >
         <Nuxt />
       </main>
