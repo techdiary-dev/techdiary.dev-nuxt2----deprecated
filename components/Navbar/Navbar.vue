@@ -28,7 +28,7 @@
 
 <style scoped lang="scss">
 .navbar {
-  @apply h-12 bg-white px-2 md:px-6;
+  @apply h-12 bg-white px-4 md:px-6;
   @apply sticky top-0 z-30;
   @apply border-b border-gray-200;
   @apply flex justify-between items-center;

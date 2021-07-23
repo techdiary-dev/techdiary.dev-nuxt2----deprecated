@@ -1,6 +1,6 @@
 <template>
   <div class="action-links">
-    <a href="#" class="action-links__link">
+    <nuxt-link to="/" class="action-links__link">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="w-5 h-5 action-links__icon"
@@ -17,7 +17,7 @@
       </svg>
 
       <p action-links__label>হোম</p>
-    </a>
+    </nuxt-link>
 
     <a href="#" class="action-links__link">
       <svg
@@ -68,6 +68,10 @@
     @apply text-base font-light;
     @apply hover:bg-gray-100 transition duration-100;
     @apply p-1 rounded-sm;
+
+    &--active {
+      @apply bg-gray-100;
+    }
   }
   &__icon {
     @apply text-gray-700;

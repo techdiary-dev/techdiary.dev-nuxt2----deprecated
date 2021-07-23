@@ -18,7 +18,7 @@ export default {
   css: ["~/assets/styles/app.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["~/plugins/visibility-observer"],
+  plugins: ["~/plugins/visibility-observer", "~/plugins/time"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -57,5 +57,9 @@ export default {
   cloudinary: {
     cloudName: process.env.NUXT_APP_CLOUDINARY_CLOUDNAME,
     useComponent: true
+  },
+
+  server: {
+    host: "0.0.0.0"
   }
 };

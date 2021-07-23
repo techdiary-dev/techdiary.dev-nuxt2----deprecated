@@ -1,12 +1,12 @@
 <template>
-  <div class="flex gap-2">
-    <button class="flex items-center justify-center ">
+  <div class="action">
+    <button class="action__button ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        class="w-5 h-5 text-gray-500"
+        class="action__icon"
       >
         <path
           stroke-linecap="round"
@@ -17,10 +17,10 @@
       </svg>
     </button>
 
-    <button class="flex items-center justify-center ">
+    <button class="action__button ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="w-5 h-5 text-gray-500"
+        class="action__icon"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -34,10 +34,10 @@
       </svg>
     </button>
 
-    <button class="flex items-center justify-center ">
+    <button class="action__button ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="w-5 h-5 text-gray-500"
+        class="action__icon"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -50,7 +50,8 @@
         />
       </svg>
     </button>
-    <button class="flex items-center justify-center ">
+
+    <button class="action__button ">
       <svg
         stroke="currentColor"
         fill="none"
@@ -59,7 +60,7 @@
         stroke-linecap="round"
         stroke-linejoin="round"
         xmlns="http://www.w3.org/2000/svg"
-        class="w-4 h-4 text-gray-600"
+        class="action__icon"
       >
         <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
         <circle cx="8.5" cy="7" r="4"></circle>
@@ -69,3 +70,17 @@
     </button>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.action {
+  @apply flex gap-2;
+
+  &__button {
+    @apply flex items-center justify-center;
+  }
+
+  &__icon {
+    @apply w-5 h-5 text-gray-500;
+  }
+}
+</style>

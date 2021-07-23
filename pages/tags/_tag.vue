@@ -1,19 +1,34 @@
 <template>
   <div>
-    <div class="tag-info">
-      <img :src="tag.icon" :alt="tag.name" class="tag-info__icon" />
-      <div>
-        <h1 class="tag-info__name" style="opacity: 1;">#{{ tag.name }}</h1>
-        <p class="tag-info__description">
-          {{ tag.description }}
-        </p>
-      </div>
+    <div v-if="$fetchState.pending">
+      <Loader />
     </div>
-    <div class="flex flex-wrap gap-5 mt-3">
-      <ArticleCard
-        v-for="article in articles"
-        :key="article.id"
-        :article="article"
+    <div v-else>
+      <div class="tag-info">
+        <img
+          v-if="tag.icon"
+          :src="tag.icon"
+          :alt="tag.name"
+          class="tag-info__icon"
+        />
+        <div>
+          <h1 class="tag-info__name">#{{ tag.name }}</h1>
+
+          <p v-if="tag.description" class="tag-info__description">
+            {{ tag.description }}
+          </p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-8 mt-3">
+        <ArticleCard
+          v-for="article in articles"
+          :key="article.id"
+          :article="article"
+        />
+      </div>
+      <Loader
+        v-observe-visibility="loadMore"
+        v-if="this.pageMeta.current_page != this.pageMeta.last_page"
       />
     </div>
   </div>
@@ -25,7 +40,6 @@ export default {
     return {
       tag: {},
       articles: [],
-      initialLoading: true,
       pageMeta: {
         current_page: 1,
         last_page: null
@@ -47,6 +61,17 @@ export default {
       this.articles = data;
       this.pageMeta = { current_page, last_page };
     } catch (error) {}
+  },
+  methods: {
+    async loadMore(isVisible) {
+      if (isVisible) {
+        if (this.pageMeta.current_page >= this.pageMeta.last_page) {
+          return;
+        }
+        this.pageMeta.current_page++;
+        await this.$fetch();
+      }
+    }
   }
 };
 </script>
@@ -62,11 +87,11 @@ export default {
   }
 
   &__name {
-    @apply mb-2 text-2xl uppercase text-gray-700;
+    @apply text-2xl uppercase text-gray-700;
   }
 
   &__description {
-    @apply text-gray-700;
+    @apply text-gray-700 mt-2;
   }
 }
 </style>
