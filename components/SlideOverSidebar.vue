@@ -1,30 +1,61 @@
 <template>
-  <div class="relative">
-    <div class="fixed top-0 left-0 " v-if="show">
+  <div class="slide-over" v-if="show">
+    <div
+      @click="$store.commit('ui/SET_SHOW_LEFTSIDEBAR', false)"
+      class="slide-over__overlay"
+    ></div>
+
+    <div class="slide-over__content">
       <button
-        class="absolute right-0 text-3xl translate-x-8 top-2"
+        class="slide-over__close"
         @click="$store.commit('ui/SET_SHOW_LEFTSIDEBAR', false)"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="w-6 h-6 "
-          viewBox="0 0 20 20"
-          fill="currentColor"
+          class="slide-over__icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
         >
           <path
-            fill-rule="evenodd"
-            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-            clip-rule="evenodd"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
           />
         </svg>
       </button>
-
-      <div class="h-screen p-4 overflow-y-auto bg-white shadow-2xl w-72">
-        <sidebar-left />
-      </div>
+      <sidebar-left />
     </div>
   </div>
 </template>
+
+<style scoped lang="scss">
+.slide-over {
+  @apply fixed top-0 left-0 z-50;
+  @apply w-full h-screen;
+
+  &__overlay {
+    @apply absolute inset-0 z-20 overflow-hidden;
+    @apply bg-gray-500/30;
+  }
+
+  &__close {
+    @apply absolute right-2;
+  }
+
+  &__icon {
+    @apply w-6 h-6 text-red-500;
+  }
+
+  &__content {
+    @apply relative z-30;
+    @apply bg-white shadow-2xl;
+    @apply h-screen  overflow-y-auto;
+    @apply w-72 p-4;
+  }
+}
+</style>
 
 <script>
 import { mapState } from "vuex";

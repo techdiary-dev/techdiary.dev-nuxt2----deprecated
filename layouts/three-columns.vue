@@ -19,7 +19,7 @@
       </aside>
     </div>
 
-    <SlideOverSidebar class="z-50" />
+    <SlideOverSidebar />
   </div>
 </template>
 
