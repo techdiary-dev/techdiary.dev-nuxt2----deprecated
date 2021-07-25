@@ -1,9 +1,8 @@
 <template>
-  <div>
+  <div class="w-full lg:w-6/12 ">
     <h3 class="text-lg font-bold text-gray-600">
       লগইন করুন
     </h3>
-
     <div class="flex flex-col gap-3 mt-3">
       <label>
         <p class="text-gray-600 ">ইউজারনেম / ইমেইল</p>
@@ -26,7 +25,7 @@
         <p>Remember Me</p>
       </label>
 
-      <button class="flex-none py-2 text-white rounded-sm bg-primary">
+      <button class="py-2 text-white bg-gray-700 rounded">
         লগইন
       </button>
     </div>

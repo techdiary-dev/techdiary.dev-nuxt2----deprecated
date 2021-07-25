@@ -12,10 +12,7 @@
       </main>
 
       <aside class="layout__aside layout__aside--right">
-        <div class="flex flex-col gap-6 ">
-          <widgets-top-writters />
-          <widgets-latest-registered-users />
-        </div>
+        <sidebar-right />
       </aside>
     </div>
 
