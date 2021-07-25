@@ -4,10 +4,7 @@
 
     <div class="layout wrapper">
       <aside class="layout__aside layout__aside--left">
-        <widgets-action-links />
-        <div class="mt-4 ">
-          <widgets-tags />
-        </div>
+        <sidebar-left />
       </aside>
 
       <main class="layout__main">
@@ -21,6 +18,8 @@
         </div>
       </aside>
     </div>
+
+    <SlideOverSidebar class="z-50" />
   </div>
 </template>
 

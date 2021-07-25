@@ -40,7 +40,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: process.env.NUXT_ENV_APP_URL_CLIENT
+    baseURL: process.env.NUXT_ENV_API_URL
   },
 
   tailwindcss: {

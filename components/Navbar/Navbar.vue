@@ -1,7 +1,7 @@
 <template>
   <div class="navbar">
     <div class="navbar__left">
-      <button class="navbar__hambargur-button">
+      <button class="navbar__hambargur-button" @click="triggerSidebar(true)">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="navbar__hambargur-icon"
@@ -46,3 +46,14 @@
   }
 }
 </style>
+
+<script>
+import { mapMutations } from "vuex";
+export default {
+  methods: {
+    ...mapMutations({
+      triggerSidebar: "ui/SET_SHOW_LEFTSIDEBAR"
+    })
+  }
+};
+</script>

@@ -4,5 +4,6 @@
     <main class="wrapper">
       <Nuxt />
     </main>
+    <!-- <SlideOverSidebar /> -->
   </div>
 </template>
