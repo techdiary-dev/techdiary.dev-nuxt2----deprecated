@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="text-base font-bold text-gray-600 ">
+    <h3 class="text-sm font-semibold text-gray-600 dark:text-blueGray-300">
       এই সপ্তাহের সেরা লেখকগন
     </h3>
     <div class="mt-2 top-writters">

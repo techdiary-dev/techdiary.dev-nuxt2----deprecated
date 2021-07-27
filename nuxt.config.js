@@ -18,7 +18,11 @@ export default {
   css: ["~/assets/styles/app.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["~/plugins/visibility-observer", "~/plugins/time"],
+  plugins: [
+    "~/plugins/visibility-observer",
+    "~/plugins/time",
+    "~/plugins/clickaway"
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -26,7 +30,8 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
-    "@nuxtjs/tailwindcss"
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/color-mode"
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -35,16 +40,23 @@ export default {
     "@nuxtjs/axios",
     // https://go.nuxtjs.dev/content
     "@nuxt/content",
-    "@nuxtjs/cloudinary"
+    "@nuxtjs/cloudinary",
+    "@nuxtjs/auth-next",
+    "@nuxtjs/toast"
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: process.env.NUXT_ENV_API_URL
+    baseURL: process.env.NUXT_ENV_API_URL,
+    credentials: true
   },
 
   tailwindcss: {
     cssPath: "~/asset/styles/app.scss"
+  },
+
+  colorMode: {
+    classSuffix: ""
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
@@ -58,7 +70,40 @@ export default {
     useComponent: true
   },
 
+  toast: {
+    position: "top-center"
+  },
+
   server: {
     host: "0.0.0.0"
+  },
+
+  auth: {
+    strategies: {
+      laravelSanctum: {
+        provider: "laravel/sanctum",
+        url: process.env.NUXT_ENV_API_URL,
+        endpoints: {
+          login: {
+            url: "/api/auth/login"
+          },
+          logout: {
+            url: "/api/auth/logout",
+            method: "post"
+          },
+          user: {
+            url: "/api/user",
+            propertyName: false
+          }
+        }
+      }
+    },
+    watchLoggedIn: true,
+    redirect: {
+      login: "/auth/login", // User will be redirected to this path if login is required.
+      logout: "/", // User will be redirected to this path if after logout, current route is protected.
+      callback: "/auth/login", // User will be redirected to this path by the identity provider after login.
+      home: "/" // User will be redirected to this path after login. (rewriteRedirects will rewrite this path)
+    }
   }
 };

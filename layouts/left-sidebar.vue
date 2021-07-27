@@ -9,7 +9,7 @@
       >
         <widgets-action-links />
         <div class="mt-4 ">
-          <widgets-tags />
+          <!-- <widgets-tags /> -->
         </div>
       </aside>
 

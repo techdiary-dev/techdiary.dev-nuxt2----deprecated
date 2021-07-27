@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply font-KohinoorBangla;
+    @apply bg-white dark:bg-blueGray-900;
+  }
+  a {
+    @apply text-green-500;
+  }
+
   *::selection {
     @apply bg-primary text-gray-800;
   }
@@ -16,10 +24,6 @@
 
   ::-webkit-scrollbar-thumb {
     @apply bg-gray-600 rounded-lg;
-  }
-
-  body {
-    @apply font-KohinoorBangla;
   }
 }
 
@@ -83,6 +87,7 @@
 @import "content-typography";
 @import "markdown";
 @import "editor";
+@import "form";
 @import "loader";
 @import "fonts";
 @import "loader";

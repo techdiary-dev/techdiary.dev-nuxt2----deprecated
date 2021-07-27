@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="text-lg font-bold text-gray-600">
+    <h3 class="text-sm font-semibold text-gray-600">
       লগইন করুন
     </h3>
 

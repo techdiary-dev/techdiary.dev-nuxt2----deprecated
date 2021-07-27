@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h3 class="text-base font-bold text-gray-600">নির্বাচিত ট্যাগ সমূহ</h3>
+    <h3 class="text-sm font-semibold text-gray-600 dark:text-blueGray-300 ">
+      নির্বাচিত ট্যাগ সমূহ
+    </h3>
     <div class="mt-2 tags">
       <div
         class="tag"
@@ -13,7 +15,7 @@
           class="tag__link"
         >
           <img class="tag__icon" :src="tag.icon" :alt="tag.label" />
-          <span class="tag__label"># {{ tag.label }}</span>
+          <span class="tag__label">{{ tag.label }}</span>
         </nuxt-link>
       </div>
 
@@ -168,10 +170,10 @@ export default {
 }
 .tag {
   &__link {
-    @apply flex space-x-2 items-center mb-2;
+    @apply flex space-x-2 items-center mb-2 text-sm;
   }
   &__icon {
-    @apply w-6;
+    @apply w-5;
   }
   &__label {
     @apply text-gray-700 dark:text-gray-50;

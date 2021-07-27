@@ -1,4 +1,5 @@
 const plugin = require("tailwindcss/plugin");
+const colors = require("tailwindcss/colors");
 
 const isFirefoxPlugin = plugin(function({ addVariant, e, postcss }) {
   addVariant("firefox", ({ container, separator }) => {
@@ -31,7 +32,8 @@ module.exports = {
     extend: {
       colors: {
         primary: "#58D4E1",
-        secondary: "#FDF9F3"
+        secondary: "#FDF9F3",
+        blueGray: colors.blueGray
       },
       fontFamily: {
         KohinoorBangla: ["KohinoorBangla", "Nunito", "Arial"],
