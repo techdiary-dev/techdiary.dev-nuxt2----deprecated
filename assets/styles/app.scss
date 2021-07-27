@@ -5,6 +5,7 @@
 @layer base {
   body {
     @apply font-KohinoorBangla;
+    @apply text-gray-700 dark:text-gray-300;
     @apply bg-white dark:bg-blueGray-900;
   }
   a {
