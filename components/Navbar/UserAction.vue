@@ -175,7 +175,7 @@
     </div>
     <button @click="visible = true" v-else class="flex items-center space-x-2">
       <svg
-        class="text-gray-700"
+        class="text-gray-700 dark:text-gray-300"
         stroke="currentColor"
         fill="none"
         stroke-width="2"
@@ -192,7 +192,9 @@
         <line x1="23" y1="11" x2="17" y2="11"></line>
       </svg>
 
-      <p class="hidden text-gray-700 md:block">প্রবেশ করুন</p>
+      <p class="hidden text-gray-700 dark:text-gray-300 md:block">
+        প্রবেশ করুন
+      </p>
     </button>
   </div>
 </template>

@@ -147,7 +147,7 @@ export default {
     @apply py-2;
 
     &--github {
-      @apply text-gray-700 border bg-gray-800/5 border-gray-800;
+      @apply text-gray-700 dark:text-gray-400 border bg-gray-800/5 border-gray-800 dark:border-gray-700;
     }
 
     &--google {
@@ -155,7 +155,7 @@ export default {
     }
 
     &--auth {
-      @apply text-gray-700 -mt-2;
+      @apply text-gray-700 dark:text-gray-400 mt-0;
     }
   }
 }

@@ -50,7 +50,7 @@
 
   &__content {
     @apply relative z-30;
-    @apply bg-white shadow-2xl;
+    @apply bg-white dark:bg-blueGray-800 shadow-2xl;
     @apply h-screen  overflow-y-auto;
     @apply w-72 p-4;
   }
