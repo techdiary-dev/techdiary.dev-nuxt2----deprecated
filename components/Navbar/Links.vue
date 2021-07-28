@@ -97,7 +97,7 @@ export default {
   }
 
   &__icon {
-    @apply text-gray-500 dark:text-gray-400;
+    @apply text-gray-500 dark:text-blueGray-400;
     @apply w-5 h-5;
   }
 }

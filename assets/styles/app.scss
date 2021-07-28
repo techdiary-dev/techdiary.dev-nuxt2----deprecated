@@ -5,7 +5,8 @@
 @layer base {
   body {
     @apply font-KohinoorBangla;
-    @apply text-gray-700 dark:text-gray-300;
+    // text-gray-700 dark:text-gray-300
+    @apply text-gray-700 dark:text-blueGray-300;
     @apply bg-white dark:bg-blueGray-900;
   }
   a {
@@ -30,8 +31,8 @@
 
 @layer utilities {
   .wrapper {
-    max-width: 1200px;
-    width: 95%;
+    max-width: 1300px;
+    width: 98%;
     margin: auto;
     position: relative;
   }
