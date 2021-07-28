@@ -37,6 +37,20 @@
     position: relative;
   }
 
+  // ### Theme-------------------------
+  .app-border-color {
+    @apply border-gray-200 dark:border-gray-700;
+  }
+  .app-icon-color {
+  }
+
+  .app-text-color {
+  }
+
+  // .app-button{
+  //   @apply
+  // }
+
   .text-dark {
     @apply text-gray-900 dark:text-gray-200;
   }
@@ -93,6 +107,7 @@
 @import "loader";
 @import "fonts";
 @import "loader";
+@import "theme";
 
 .top-full {
   top: 100%;
