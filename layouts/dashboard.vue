@@ -17,12 +17,12 @@
   @apply flex min-h-screen;
 
   &__sidebar {
-    @apply w-40 flex-none p-2;
+    @apply w-48 flex-none p-2;
     @apply border-r;
   }
 
   &__main {
-    @apply flex-auto;
+    @apply flex-auto p-8;
   }
 }
 </style>

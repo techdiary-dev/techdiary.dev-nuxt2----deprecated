@@ -1,6 +1,6 @@
 <template>
-  <div class="border-b app-border-color">
-    <div class="navbar wrapper">
+  <div class="navbar app-border-color">
+    <div class="navbar__inner wrapper">
       <div class="navbar__left">
         <button class="navbar__hambargur-button" @click="triggerSidebar(true)">
           <svg
@@ -29,10 +29,13 @@
 
 <style scoped lang="scss">
 .navbar {
-  @apply bg-white dark:bg-blueGray-900;
-  @apply h-12 px-4 md:px-6;
-  @apply sticky top-0 z-30;
-  @apply flex justify-between items-center;
+  @apply sticky top-0 left-0 z-30 w-full border-b;
+
+  .navbar__inner {
+    @apply bg-white dark:bg-blueGray-900;
+    @apply h-12 px-4 md:px-6;
+    @apply flex justify-between items-center;
+  }
 
   &__logo {
     @apply h-3 text-gray-800 dark:text-gray-100;

@@ -79,6 +79,11 @@ export default {
   },
 
   auth: {
+    // cookie: {
+    //   options: {
+    //     sameSite: "lax"
+    //   }
+    // },
     strategies: {
       laravelSanctum: {
         provider: "laravel/sanctum",
