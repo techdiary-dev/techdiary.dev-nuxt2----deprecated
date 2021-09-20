@@ -1,7 +1,10 @@
 <template>
   <div class="dashboard-menu">
     <div class="dashboard-menu__section">
-      <a href="#" class="dashboard-menu__link dashboard-menu__link--create">
+      <nuxt-link
+        :to="{ name: 'dashboard-index' }"
+        class="dashboard-menu__link dashboard-menu__link--create"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -17,9 +20,12 @@
           ></path>
         </svg>
         <span class="dashboard-menu__label">নতুন ডায়েরি</span>
-      </a>
+      </nuxt-link>
 
-      <a href="#" class="dashboard-menu__link">
+      <nuxt-link
+        :to="{ name: 'dashboard-diaries' }"
+        class="dashboard-menu__link"
+      >
         <svg
           stroke="currentColor"
           fill="none"
@@ -33,9 +39,12 @@
           <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
         </svg>
         <span class="dashboard-menu__label">আমার ডায়েরি সমূহ</span>
-      </a>
+      </nuxt-link>
 
-      <a href="#" class="dashboard-menu__link">
+      <nuxt-link
+        :to="{ name: 'dashboard-bookmarks' }"
+        class="dashboard-menu__link"
+      >
         <svg
           stroke="currentColor"
           fill="none"
@@ -49,13 +58,16 @@
           <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
         </svg>
         <span class="dashboard-menu__label">বুকমার্ক সমূহ</span>
-      </a>
+      </nuxt-link>
     </div>
 
     <div class="dashboard-menu__section">
       <h3 class="font-bold">সেটিংস</h3>
 
-      <a href="#" class="dashboard-menu__link">
+      <nuxt-link
+        :to="{ name: 'dashboard-settings' }"
+        class="dashboard-menu__link"
+      >
         <svg
           stroke="currentColor"
           fill="none"
@@ -69,8 +81,12 @@
           <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
         </svg>
         <span class="dashboard-menu__label">প্রোফাইল হালনাগাদ</span>
-      </a>
-      <a href="#" class="dashboard-menu__link">
+      </nuxt-link>
+
+      <nuxt-link
+        :to="{ name: 'dashboard-sessions' }"
+        class="dashboard-menu__link"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -87,7 +103,7 @@
           ></path>
         </svg>
         <span class="dashboard-menu__label">Sessions</span>
-      </a>
+      </nuxt-link>
     </div>
   </div>
 </template>

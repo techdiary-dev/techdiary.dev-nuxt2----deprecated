@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Hello from diaries</h1>
+    <h1>Sessions</h1>
   </div>
 </template>
 

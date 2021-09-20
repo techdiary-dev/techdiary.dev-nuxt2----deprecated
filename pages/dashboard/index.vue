@@ -1,8 +1,10 @@
-<template>
-  <h1>Dashboard</h1>
-</template>
+<template></template>
+
 <script>
 export default {
-  layout: "dashboard"
+  layout: "dashboard",
+  asyncData({ redirect }) {
+    return redirect("/dashboard/diaries");
+  }
 };
 </script>
