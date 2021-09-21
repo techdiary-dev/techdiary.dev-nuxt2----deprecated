@@ -92,6 +92,89 @@
     />
 
     <article-editor-thumbnail v-model="article.thumbnail" />
+
+    <!-- ======================================================= -->
+    <!-- Sidebar Content start -->
+    <!-- ======================================================= -->
+    <div
+      class="fixed inset-0 z-30 w-full overflow-y-auto"
+      :class="[showOptions ? 'visible' : 'invisible']"
+    >
+      <div
+        class="flex items-end justify-end min-h-screen px-4 pt-4 pb-20 mr-3 text-right sm:block sm:p-0"
+      >
+        <!--
+          Background overlay, show/hide based on modal state.
+          Entering: "ease-out duration-300"
+            From: "opacity-0"
+            To: "opacity-100"
+          Leaving: "ease-in duration-200"
+            From: "opacity-100"
+            To: "opacity-0"
+        -->
+        <transition
+          enter-active-class="duration-300 ease-out"
+          enter-class="opacity-0"
+          enter-to-class="opacity-100"
+          leave-active-class="duration-200 ease-in"
+          leave-class="opacity-100"
+          leave-to-class="opacity-0"
+        >
+          <div
+            class="fixed inset-0 transition-opacity"
+            aria-hidden="true"
+            v-if="showOptions"
+            @click="closeOptions"
+          >
+            <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+          </div>
+        </transition>
+
+        <!--
+          Modal panel, show/hide based on modal state.
+          Entering: "ease-out duration-300"
+            From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            To: "opacity-100 translate-y-0 sm:scale-100"
+          Leaving: "ease-in duration-200"
+            From: "opacity-100 translate-y-0 sm:scale-100"
+            To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+        -->
+        <transition
+          enter-active-class="duration-300 ease-out"
+          enter-class="translate-y-4 opacity-0 sm:translate-y-0 sm:scale-95"
+          enter-to-class="translate-y-0 opacity-100 sm:scale-100"
+          leave-active-class="duration-200 ease-in"
+          leave-class="translate-y-0 opacity-100 sm:scale-100"
+          leave-to-class="translate-y-4 opacity-0 sm:translate-y-0 sm:scale-95"
+        >
+          <div
+            class="inline-block w-full max-w-sm overflow-hidden text-left align-bottom transition-all transform bg-white rounded-md shadow-xl sm:my-8"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-headline"
+            v-if="showOptions"
+          >
+            <div class="w-full px-4 py-5 bg-white dark:bg-gray-800">
+              <div>
+                <div class="mt-3 text-center sm:mt-0 sm:text-left">
+                  <div class="mt-2">
+                    <article-editor-meta
+                      @closeMeta="closeOptions"
+                      :loading="loading"
+                      :article="article"
+                      @saveArticle="() => save()"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </div>
+    </div>
+    <!-- ======================================================= -->
+    <!-- Sidebar Content end -->
+    <!-- ======================================================= -->
   </div>
 </template>
 

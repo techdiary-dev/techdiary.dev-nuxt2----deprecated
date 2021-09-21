@@ -21,7 +21,8 @@ export default {
   plugins: [
     "~/plugins/visibility-observer",
     "~/plugins/time",
-    "~/plugins/clickaway"
+    "~/plugins/clickaway",
+    "~/plugins/multi-select"
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
