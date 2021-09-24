@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col min-h-[80vh] overflow-y-auto">
+  <div class="flex flex-col min-h-[80vh] overflow-y-auto px-1">
     <section class="flex justify-between">
-      <button
+      <!-- <button
         @click="closeMeta"
         class="grid p-2 text-white bg-red-500 rounded-md place-content-center"
       >
@@ -19,9 +19,9 @@
             d="M6 18L18 6M6 6l12 12"
           />
         </svg>
-      </button>
+      </button> -->
 
-      <button
+      <!-- <button
         @click="$emit('saveArticle')"
         class="flex items-center justify-center px-5 py-1 text-white rounded-full bg-blueGray-800"
       >
@@ -48,9 +48,9 @@
         </svg>
         <span v-if="loading">অপেক্ষা করুন</span>
         <span v-else>সেভ করুন</span>
-      </button>
+      </button> -->
     </section>
-    <section class="my-4">
+    <section class="">
       <h3 class="my-3 text-xl font-bold text-dark tracking-relaxed">
         আপনি কি ডায়েরি পাবলিশ করার জন্যে প্রস্তুত?
       </h3>
@@ -66,15 +66,15 @@
     <div
       class="flex items-center p-3 rounded-md text-dark"
       :class="{
-        'bg-yellow-300': !article.isPublished,
-        'bg-green-300': article.isPublished
+        'bg-yellow-300': !settings.isPublished,
+        'bg-green-300': settings.isPublished
       }"
     >
       <input
         type="checkbox"
         class="rounded"
         id="isPublished"
-        v-model="article.isPublished"
+        v-model="settings.isPublished"
       />
       <label
         class="flex items-center justify-between w-full ml-2 cursor-pointer"
@@ -83,7 +83,7 @@
         <span class="text-gray-800">ডায়েরি পাবলিশ করুন</span>
 
         <svg
-          v-if="!article.isPublished"
+          v-if="!settings.isPublished"
           xmlns="http://www.w3.org/2000/svg"
           class="w-5 h-5 text-gray-800"
           viewBox="0 0 20 20"
@@ -96,7 +96,7 @@
           />
         </svg>
         <svg
-          v-if="article.isPublished"
+          v-if="settings.isPublished"
           xmlns="http://www.w3.org/2000/svg"
           class="w-5 h-5 text-gray-800"
           viewBox="0 0 20 20"
@@ -127,13 +127,47 @@
         @tag="createNewTag"
         track-by="id"
         label="name"
-        v-model="article.tags"
+        v-model="settings.tags"
         :closeOnSelect="false"
       ></multi-select>
     </div>
 
-    <div>
-      <form-input v-model="article.serie" label="সিরিজ এর নাম " class="mb-3" />
+    <div class="mt-4 ">
+      <h2 class="text-lg font-bold ">Seo settings</h2>
+
+      <div class="flex flex-col space-y-4">
+        <form-file-uploader preset="techdiary-article-covers" />
+
+        <form-input
+          v-model="settings.seo.seo_title"
+          label="SEO Title (Optional)"
+          desc="The SEO Title will be shown in place of your Title on search engine results pages, such as a Google search. SEO titles between 40 and 50 characters with commonly searched words have the best click-through-rates."
+          placeholder="Seo title"
+        />
+
+        <form-textarea
+          v-model="settings.seo.seo_description"
+          label="SEO Description (Optional)"
+          desc="The SEO Description will be used in place of your Subtitle on search engine results pages. Good SEO descriptions utilize keywords, summarize the story and are between 140-156 characters long."
+          placeholder="Enter meta description…"
+        />
+
+        <form-input
+          v-model="settings.seo.canonical_url"
+          label="Are you republishing?"
+          desc="Change the canonical URL of this article to the original article"
+          placeholder="Paste the original URL here"
+        />
+
+        <div class="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            v-model="settings.settings.disabled_comments"
+            id="disable_comments"
+          />
+          <label for="disable_comments">Disable comments</label>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -141,7 +175,7 @@
 <script>
 export default {
   props: {
-    article: {
+    settings: {
       type: Object,
       required: true
     },
@@ -163,7 +197,7 @@ export default {
     async createNewTag(name) {
       const { data } = await this.$axios.$post("/api/tags", { name });
       this.tagOptions.push(data);
-      this.article.tags.push(data);
+      this.settings.tags.push(data);
     },
     closeMeta() {
       this.$emit("closeMeta");

@@ -4,6 +4,9 @@
       <p v-if="label" class="td-label">
         {{ label }}
       </p>
+      <p v-if="desc" class="mb-2 text-sm text-gray-600">
+        {{ desc }}
+      </p>
       <textarea
         @input="$emit('input', $event.target.value)"
         class="td-input"
@@ -35,6 +38,11 @@ export default {
       default: "text"
     },
     helperText: {
+      type: String,
+      default: "",
+      required: false
+    },
+    desc: {
       type: String,
       default: "",
       required: false

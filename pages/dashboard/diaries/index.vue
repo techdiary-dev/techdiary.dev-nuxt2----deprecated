@@ -1,32 +1,141 @@
 <template>
   <div>
     <nav class="flex space-x-4">
-      <button class="text-lg font-bold ">My Articles(11)</button>
-      <button class="text-lg">Drafts(5)</button>
-      <button class="text-lg">Pending(2)</button>
-      <button class="text-lg">Rejected(1)</button>
+      <button
+        class="text-lg"
+        :class="{ 'font-bold': filter == 'all' }"
+        @click="filter = 'all'"
+      >
+        সকল ডায়েরি(12)
+      </button>
+
+      <button
+        class="text-lg"
+        :class="{ 'font-bold': filter == 'published' }"
+        @click="filter = 'published'"
+      >
+        প্রকাশিত(45)
+      </button>
+      <button
+        class="text-lg"
+        :class="{ 'font-bold': filter == 'drafted' }"
+        @click="filter = 'drafted'"
+      >
+        খসড়া(4)
+      </button>
     </nav>
 
     <div class="flex flex-col mt-10 space-y-6 ">
-      <article class="flex items-center justify-between">
+      <article
+        class="flex items-center justify-between"
+        v-for="article in articles"
+        :key="article.id"
+      >
         <div>
-          <p class="text-xl">Lorem ipsum dolor sit amet.</p>
-          <p class="mt-2 text-xs font-semibold text-gray-60">
-            14 days ago
-          </p>
+          <nuxt-link
+            :to="{
+              name: 'username-slug',
+              params: { username: $auth.user.username, slug: article.slug }
+            }"
+            class="text-xl text-gray-700 truncate dark:text-gray-200"
+          >
+            {{ article.title }}
+          </nuxt-link>
+
+          <div class="flex items-center mt-2 space-x-2">
+            <p
+              class="inline-block px-2 text-xs rounded-md"
+              :class="{
+                'bg-green-100': article.isPublished,
+                'bg-red-100': !article.isPublished
+              }"
+            >
+              {{ article.isPublished ? "Published" : "Drafted" }}
+            </p>
+            <p class="text-xs font-semibold text-gray-60">
+              {{ $dayjs(article.created_at).format("DD/MM/YYYY") }}
+            </p>
+          </div>
         </div>
 
         <div class="flex space-x-4 ">
-          <button class="font-semibold text-green-500">Edit</button>
+          <nuxt-link
+            :to="{
+              name: 'dashboard-diaries-edit-id',
+              params: { id: article.id }
+            }"
+            class="font-semibold text-green-500"
+          >
+            সংস্কার
+          </nuxt-link>
           <button class="font-semibold text-red-500">Delete</button>
         </div>
       </article>
+
+      <div v-observe-visibility="visibilityChanged" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  layout: "dashboard"
+  layout: "dashboard",
+  data: () => ({
+    articles: [],
+    filter: "all", // draft, published
+    modalOpen: false,
+    counts: {
+      published: 0,
+      draft: 0
+    },
+    pageMeta: {
+      current_page: 1,
+      last_page: null
+    },
+    removeArticleSlug: null,
+    removeArticleIndex: null
+  }),
+  async fetch() {
+    const {
+      data,
+      meta: { current_page, last_page }
+    } = await this.$axios.$get(
+      `/api/auth/articles?page=${this.pageMeta.current_page}`
+    );
+    this.articles.push(...data);
+    this.pageMeta = { current_page, last_page };
+  },
+  computed: {
+    // filterArticles(){
+    //   if(this.)
+    // }
+  },
+  methods: {
+    async removeArticle(slug, index) {
+      swal({
+        title: "ডায়েরি মুছে ফেলতে চান?",
+        text: "সাবধান - একবার মুছে ফেলার পর আর  কখনোই ফিরিয়ে আনা যাবে না",
+        icon: "warning",
+        buttons: ["না", "হ্যাঁ"],
+        dangerMode: true
+      }).then(async confirmed => {
+        if (confirmed) {
+          await this.$axios.$delete(`/api/articles/${slug}`);
+          this.articles.splice(index, 1);
+          this.$toast.success("ডায়েরি মুছে ফেলা হয়েছে।");
+        }
+      });
+    },
+    async visibilityChanged(isVisible) {
+      if (isVisible) {
+        if (this.pageMeta.current_page >= this.pageMeta.last_page) {
+          return;
+        }
+        this.pageMeta.current_page++;
+
+        await this.$fetch();
+      }
+    }
+  }
 };
 </script>

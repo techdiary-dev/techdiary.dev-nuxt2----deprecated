@@ -80,7 +80,7 @@
   code.inline-code {
     &::before,
     &::after {
-      content: '';
+      content: "";
     }
 
     @apply bg-gray-700 px-3 text-white shadow-lg;
@@ -143,7 +143,7 @@
         border-top: none;
         border-right: none;
         background: transparent;
-        content: '';
+        content: "";
         opacity: 1;
         transform: rotate(-45deg);
       }

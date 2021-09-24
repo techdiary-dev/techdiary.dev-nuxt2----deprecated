@@ -1,8 +1,8 @@
 <template>
   <div class="dashboard-menu">
     <div class="dashboard-menu__section">
-      <nuxt-link
-        :to="{ name: 'dashboard-index' }"
+      <button
+        @click="sperkArticle"
         class="dashboard-menu__link dashboard-menu__link--create"
       >
         <svg
@@ -20,7 +20,7 @@
           ></path>
         </svg>
         <span class="dashboard-menu__label">নতুন ডায়েরি</span>
-      </nuxt-link>
+      </button>
 
       <nuxt-link
         :to="{ name: 'dashboard-diaries' }"
@@ -107,6 +107,21 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    async sperkArticle() {
+      const post = await this.$axios.$post("api/articles/spark");
+
+      this.$router.push({
+        name: "dashboard-diaries-edit-id",
+        params: { id: post.uuid }
+      });
+    }
+  }
+};
+</script>
 
 <style scoped lang="scss">
 .dashboard-menu {
