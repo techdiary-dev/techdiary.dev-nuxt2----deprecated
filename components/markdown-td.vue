@@ -58,8 +58,9 @@ export default {
 };
 </script>
 <style>
-.CodeMirror {
+.CodeMirror.cm-s-default.CodeMirror-wrap {
   font-size: 16px;
+  height: auto;
 }
 </style>
-<style src="codemirror/lib/codemirror.css" />
+<style src="codemirror/lib/codemirror.css"/>
