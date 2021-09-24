@@ -26,6 +26,7 @@
     "filepond-plugin-image-preview": "^4.6.10",
     "lodash.debounce": "^4.0.8",
     "nuxt": "^2.15.8",
+    "sweetalert": "^2.1.2",
     "vue-filepond": "^6.0.3",
     "vue-multiselect": "^2.1.6",
     "vue-observe-visibility": "^1.0.0",
