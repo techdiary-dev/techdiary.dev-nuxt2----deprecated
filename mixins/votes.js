@@ -1,3 +1,5 @@
+import swal from "sweetalert";
+
 export default {
   data() {
     return {
@@ -48,6 +50,14 @@ export default {
       this.votes.down_voters.push(this.$auth.user.id);
     },
     upVote(uuid) {
+      if (!this.$auth.loggedIn) {
+        swal({
+          title: "আপনি লগইন অবস্থায় নেই",
+          icon: "error"
+        });
+        return;
+      }
+
       this.$axios.$post(`api/articles/${uuid}/vote`, {
         vote: "UP_VOTE"
       });
@@ -67,6 +77,13 @@ export default {
       this.removeFromDownvotterList();
     },
     downVote(uuid) {
+      if (!this.$auth.loggedIn) {
+        swal({
+          title: "আপনি লগইন অবস্থায় নেই",
+          icon: "error"
+        });
+        return;
+      }
       this.$axios.$post(`api/articles/${uuid}/vote`, {
         vote: "DOWN_VOTE"
       });

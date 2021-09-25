@@ -167,10 +167,10 @@ export default {
     @apply rounded-sm overflow-hidden;
   }
   &__title {
-    @apply block text-xl font-semibold text-gray-700;
+    @apply block text-xl font-semibold text-gray-700 dark:text-gray-300;
   }
   &__excerpt {
-    @apply block text-gray-500;
+    @apply block text-gray-500 dark:text-gray-400;
   }
 
   &__content {
@@ -188,7 +188,9 @@ export default {
 .vote {
   @apply inline-flex overflow-hidden rounded-md;
   &__button {
-    @apply flex items-center px-3 py-1 transition-all duration-100 bg-gray-100 hover:bg-gray-200;
+    @apply bg-gray-100 hover:bg-gray-200;
+    @apply dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700;
+    @apply flex items-center px-3 py-1 transition-all duration-100;
     &--upvote {
       @apply border-r;
     }
@@ -197,7 +199,7 @@ export default {
     }
 
     &--active {
-      @apply text-primary bg-gray-200;
+      @apply text-primary bg-gray-200 dark:bg-gray-700;
     }
   }
 }
