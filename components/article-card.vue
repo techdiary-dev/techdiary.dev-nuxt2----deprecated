@@ -73,7 +73,11 @@
       <!-- Actions start -->
       <div class="flex items-center mt-2 space-x-4">
         <div class="vote">
-          <button class="vote__button vote__button--upvote">
+          <button
+            class="vote__button vote__button--upvote"
+            @click="upVote(article.id)"
+            :class="{ 'vote__button--active': isUpvotted }"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="w-4 h-4"
@@ -88,10 +92,14 @@
                 d="M5 15l7-7 7 7"
               />
             </svg>
-            <span>14</span>
+            <span>{{ votes.score }}</span>
           </button>
 
-          <button class="vote__button vote__button--downvote">
+          <button
+            class="vote__button vote__button--downvote"
+            :class="{ 'vote__button--active': isDownvotted }"
+            @click="downVote(article.id)"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="w-4 h-4"
@@ -134,15 +142,11 @@
 </template>
 
 <script>
-import reactions from "~/mixins/reactions";
+// import reactions from "~/mixins/reactions";
+import votes from "~/mixins/votes";
 export default {
   props: ["article"],
-  mixins: [reactions],
-  data() {
-    return {
-      reactions: this.article.reactions
-    };
-  },
+  mixins: [votes],
   computed: {
     articleUrl() {
       return {
@@ -190,6 +194,10 @@ export default {
     }
     &--downvote {
       @apply px-2;
+    }
+
+    &--active {
+      @apply text-primary bg-gray-200;
     }
   }
 }
