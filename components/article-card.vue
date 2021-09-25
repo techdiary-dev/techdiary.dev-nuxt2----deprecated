@@ -133,7 +133,7 @@
             />
           </svg>
 
-          <span>145</span>
+          <span>{{ article.comments_count }}</span>
         </p>
       </div>
       <!-- Actions end -->
