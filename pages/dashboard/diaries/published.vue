@@ -4,13 +4,13 @@
       <nav class="flex space-x-4">
         <nuxt-link
           :to="{ name: 'dashboard-diaries' }"
-          class="inline-grid text-lg text-gray-900"
+          class="inline-grid text-lg text-gray-400"
         >
           সকল ডায়েরি({{ counts.total }})
         </nuxt-link>
         <nuxt-link
           :to="{ name: 'dashboard-diaries-published' }"
-          class="inline-grid text-lg text-gray-400"
+          class="inline-grid text-lg text-gray-900"
         >
           প্রকাশিত({{ counts.published }})
         </nuxt-link>
@@ -77,12 +77,12 @@
         <div v-observe-visibility="visibilityChanged" />
       </div>
     </div>
-
     <Loader v-if="$fetchState.pending" />
   </div>
 </template>
 
 <script>
+import swal from "sweetalert";
 export default {
   layout: "dashboard",
   data: () => ({
@@ -105,7 +105,7 @@ export default {
       data,
       meta: { current_page, last_page, counts, total }
     } = await this.$axios.$get(
-      `/api/auth/articles?page=${this.pageMeta.current_page}`
+      `/api/auth/articles?page=${this.pageMeta.current_page}&isPublished=true`
     );
     this.counts = counts;
     this.counts.total = total;
