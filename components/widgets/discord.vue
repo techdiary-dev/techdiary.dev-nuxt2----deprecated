@@ -1,8 +1,12 @@
 <template>
   <div
-    class="p-3 mb-5 overflow-hidden border rounded-lg theme-bg theme-border theme-shadow"
+    class="p-3 mb-5 overflow-hidden border border-gray-200 rounded-lg dark:border-gray-600 "
   >
-    <a href="https://discord.gg/9eyxuvg">
+    <a
+      href="https://go.techdiary.dev/discord"
+      target="_blank"
+      class=" text-primary"
+    >
       <svg
         class="w-auto h-12 fill-current theme-text"
         xmlns="http://www.w3.org/2000/svg"
@@ -17,12 +21,15 @@
       </svg>
       <span
         class="block px-3 pt-1 pb-3 mt-1 text-sm text-gray-700 dark:text-gray-200"
-        ><strong class="block">DevDojo Discord</strong
-        ><span class="block pt-2 pb-1 text-xs text-gray-600 dark:text-gray-500"
-          >Join the DevDojo Community Discord server and connect with other like
-          minded developers!</span
-        ></span
       >
+        <strong class="block font-mono">Techdiary Discord</strong>
+        <span
+          class="block pt-2 pb-1 text-base text-gray-600 dark:text-gray-300"
+        >
+          Techdiary কমিউনিটি ডিসকর্ড সার্ভারে যোগ দিন এবং অন্যান্য সমমনা
+          ডেভেলপারদের সাথে সংযোগ স্থাপন করুন!
+        </span>
+      </span>
     </a>
   </div>
 </template>
