@@ -39,7 +39,9 @@
         </div>
 
         <div class="flex items-center space-x-2">
-          <p class="text-sm text-gray-500 ">({{ lastSaved }})</p>
+          <p class="text-sm text-gray-500 " v-if="lastSaved">
+            সেভ হয়েছে {{ lastSaved }}
+          </p>
 
           <button
             class="flex items-center justify-center px-3 py-2 space-x-1 transition duration-150 transform rounded-md text-dark opacity-90 focus:outline-none hover:bg-gray-200 dark:hover:bg-gray-500"
@@ -175,8 +177,6 @@
 </template>
 
 <script>
-import formatDistanceToNow from "date-fns/formatDistanceToNow";
-
 import debounce from "lodash.debounce";
 import upload from "~/mixins/upload";
 export default {
@@ -242,14 +242,16 @@ export default {
         `api/articles/uuid/${this.$route.params.id}`,
         payload
       );
-      this.touchLastSaved();
       clearInterval(this.interval);
+      this.touchLastSaved();
     },
     touchLastSaved() {
       const lastSaved = new Date();
-      this.lastSaved = formatDistanceToNow(lastSaved, {
-        includeSeconds: true
-      });
+      this.interval = setInterval(() => {
+        this.lastSaved = this.$dayjs(lastSaved).fromNow();
+      }, 2000);
+
+      this.interval = s;
     },
     openOptions() {
       this.showOptions = true;
