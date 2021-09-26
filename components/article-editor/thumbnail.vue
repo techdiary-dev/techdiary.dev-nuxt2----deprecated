@@ -64,7 +64,8 @@ export default {
   },
   data() {
     return {
-      loading: false
+      loading: false,
+      preview: null
     };
   },
   methods: {
@@ -81,7 +82,7 @@ export default {
 
       const imageSrc = await this.uploadFile(file, "techdiary-article-covers");
       this.loading = false;
-
+      this.preview = imageSrc;
       this.$emit("input", imageSrc);
     },
     openUploadWindow() {
