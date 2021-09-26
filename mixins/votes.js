@@ -50,7 +50,7 @@ export default {
     addToDownvoters() {
       this.votes.down_voters.push(this.$auth.user.id);
     },
-    upVote(uuid) {
+    upVote(model_name, model_id) {
       if (!this.$auth.loggedIn) {
         swal({
           title: "আপনি লগইন অবস্থায় নেই",
@@ -59,7 +59,9 @@ export default {
         return;
       }
 
-      this.$axios.$post(`api/articles/${uuid}/vote`, {
+      this.$axios.$post(`api/vote`, {
+        model_name,
+        model_id,
         vote: "UP_VOTE"
       });
 
@@ -77,7 +79,7 @@ export default {
 
       this.removeFromDownvotterList();
     },
-    downVote(uuid) {
+    downVote(model_name, model_id) {
       if (!this.$auth.loggedIn) {
         swal({
           title: "আপনি লগইন অবস্থায় নেই",
@@ -85,7 +87,10 @@ export default {
         });
         return;
       }
-      this.$axios.$post(`api/articles/${uuid}/vote`, {
+
+      this.$axios.$post(`api/vote`, {
+        model_name,
+        model_id,
         vote: "DOWN_VOTE"
       });
 

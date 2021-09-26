@@ -23,12 +23,16 @@
         </div>
       </nuxt-link>
 
-      <button>
+      <button @click="bookmark('ARTICLE', article.id)">
         <svg
           viewBox="0 0 14 18"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="w-4 text-dark-secondary"
+          class="w-4 "
+          :class="{
+            'text-dark-secondary': !isBookmarked,
+            'fill-current text-primary': isBookmarked
+          }"
         >
           <path
             d="M1.83354 1.28697C1.52462 1.63079 1.35107 2.0971 1.35107 2.58333V17.25L7.11647 14.0417L12.8819 17.25V2.58333C12.8819 2.0971 12.7083 1.63079 12.3994 1.28697C12.0905 0.943154 11.6715 0.75 11.2346 0.75H2.99833C2.56145 0.75 2.14246 0.943154 1.83354 1.28697Z"
@@ -75,7 +79,7 @@
         <div class="vote">
           <button
             class="vote__button vote__button--upvote"
-            @click="upVote(article.id)"
+            @click="upVote('ARTICLE', article.id)"
             :class="{ 'vote__button--active': isUpvotted }"
           >
             <svg
@@ -98,7 +102,7 @@
           <button
             class="vote__button vote__button--downvote"
             :class="{ 'vote__button--active': isDownvotted }"
-            @click="downVote(article.id)"
+            @click="downVote('ARTICLE', article.id)"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -144,9 +148,10 @@
 <script>
 // import reactions from "~/mixins/reactions";
 import votes from "~/mixins/votes";
+import bookmark from "~/mixins/bookmark";
 export default {
   props: ["article"],
-  mixins: [votes],
+  mixins: [votes, bookmark],
   computed: {
     articleUrl() {
       return {
