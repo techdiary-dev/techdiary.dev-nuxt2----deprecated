@@ -21,7 +21,7 @@ export default {
   plugins: [
     "~/plugins/visibility-observer",
     "~/plugins/datefns",
-    "~/plugins/dayjs",
+    // "~/plugins/dayjs",
     "~/plugins/clickaway",
     "~/plugins/multi-select"
   ],
@@ -44,13 +44,20 @@ export default {
     "@nuxt/content",
     "@nuxtjs/cloudinary",
     "@nuxtjs/auth-next",
-    "@nuxtjs/toast"
+    "@nuxtjs/toast",
+    "@nuxtjs/dayjs"
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseURL: process.env.NUXT_ENV_API_URL,
     credentials: true
+  },
+
+  dayjs: {
+    locales: ["bn"],
+    defaultLocale: "bn",
+    plugins: ["relativeTime"]
   },
 
   tailwindcss: {

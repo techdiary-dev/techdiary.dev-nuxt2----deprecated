@@ -19,7 +19,7 @@
       <p action-links__label>হোম</p>
     </nuxt-link>
 
-    <a href="#" class="action-links__link">
+    <nuxt-link :to="{ name: 'dashboard-bookmarks' }" class="action-links__link">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -36,9 +36,9 @@
       </svg>
 
       <p action-links__label>রিডিং লিস্ট</p>
-    </a>
+    </nuxt-link>
 
-    <a href="#" class="action-links__link">
+    <button @click="sperkArticle" class="action-links__link">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="w-5 h-5 action-links__icon"
@@ -55,9 +55,34 @@
       </svg>
 
       <p action-links__label>নতুন ডায়েরি</p>
-    </a>
+    </button>
   </div>
 </template>
+
+<script>
+import swal from "sweetalert";
+
+export default {
+  methods: {
+    async sperkArticle() {
+      if (!this.$auth.loggedIn) {
+        swal({
+          title: "আপনি লগইন অবস্থায় নেই",
+          icon: "error"
+        });
+        return;
+      }
+
+      const post = await this.$axios.$post("api/articles/spark");
+
+      this.$router.push({
+        name: "dashboard-diaries-edit-id",
+        params: { id: post.uuid }
+      });
+    }
+  }
+};
+</script>
 
 <style lang="scss">
 .action-links {

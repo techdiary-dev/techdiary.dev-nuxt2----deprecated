@@ -6,7 +6,7 @@
         @click="dropDownOpen = !dropDownOpen"
       >
         <!-- When user have profile pic -->
-        <div class="w-8 h-8 mr-2 overflow-hidden rounded-full cursor-pointer">
+        <div class="w-8 h-8 overflow-hidden rounded-full cursor-pointer">
           <img
             v-if="$auth.user.profilePhoto"
             :src="$auth.user.profilePhoto"
@@ -19,30 +19,6 @@
             :alt="$auth.user.name"
           />
         </div>
-
-        <p
-          class="hidden text-lg text-gray-700 cursor-pointer dark:text-blueGray-300 md:mr-2 md:block"
-        >
-          {{ $auth.user.name }}
-        </p>
-
-        <svg
-          style="transition: transform 200ms"
-          class="hidden text-gray-700 cursor-pointer dark:text-blueGray-300 md:block"
-          :class="[dropDownOpen && 'svgRotation']"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
       </div>
       <!--======================================
             User action dropdown
@@ -173,29 +149,6 @@
         </div>
       </transition>
     </div>
-    <button @click="visible = true" v-else class="flex items-center space-x-2">
-      <svg
-        class="text-gray-700 dark:text-gray-300"
-        stroke="currentColor"
-        fill="none"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        height="1em"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-        <circle cx="8.5" cy="7" r="4"></circle>
-        <line x1="20" y1="8" x2="20" y2="14"></line>
-        <line x1="23" y1="11" x2="17" y2="11"></line>
-      </svg>
-
-      <p class="hidden text-gray-700 dark:text-gray-300 md:block">
-        প্রবেশ করুন
-      </p>
-    </button>
   </div>
 </template>
 

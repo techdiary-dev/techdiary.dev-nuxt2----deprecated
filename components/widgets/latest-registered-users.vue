@@ -6,29 +6,30 @@
 
     <div class="flex flex-col gap-5 ">
       <!--  -->
-      <div class="flex items-center">
-        <a href="/mahabub-hossain-bd" class="">
+      <div class="flex items-center" v-for="user in users" :key="user.id">
+        <nuxt-link
+          :to="{ name: 'username', params: { username: user.username } }"
+        >
           <div class="w-10 h-10 overflow-hidden rounded-full">
             <img
-              src="https://res.cloudinary.com/techdiary-dev/image/fetch/c_scale,f_auto,q_auto,w_40/https://avatars.githubusercontent.com/u/64084426%3Fv%3D4"
-              crop="scale"
-              width="40"
-              fetchformat="auto"
-              quality="auto"
+              :src="user.profilePhoto"
               loading="lazy"
               class="w-full h-auto"
             />
           </div>
-        </a>
+        </nuxt-link>
 
         <div class="ml-2">
           <h3 class="text-base text-dark">
-            <a href="/mahabub-hossain-bd" class="">
-              Mahabub Hossain
-            </a>
+            <nuxt-link
+              class="text-gray-800 dark:text-gray-300 "
+              :to="{ name: 'username', params: { username: user.username } }"
+            >
+              {{ user.name }}
+            </nuxt-link>
           </h3>
           <p class="text-xs text-dark-secondary">
-            ২ দিন আগে
+            {{ $dayjs(user.joined).fromNow() }}
           </p>
         </div>
       </div>
@@ -36,3 +37,16 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      users: []
+    };
+  },
+  async fetch() {
+    const { data } = await this.$axios.$get("api/users");
+    this.users = data;
+  }
+};
+</script>

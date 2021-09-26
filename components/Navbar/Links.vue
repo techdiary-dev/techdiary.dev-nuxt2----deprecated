@@ -18,23 +18,6 @@
         </svg>
       </button>
 
-      <button class="action__button ">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="action__icon"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M12 4v16m8-8H4"
-          />
-        </svg>
-      </button>
-
       <client-only>
         <button @click="colorModeSwitcher" lass="action__button ">
           <svg
@@ -73,16 +56,57 @@
       </client-only>
     </div>
 
+    <div>
+      <button
+        @click="sperkArticle"
+        class="flex items-center px-4 py-1 space-x-2 rounded-full bg-primary"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          class="w-4 h-4 text-white"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 4v16m8-8H4"
+            data-v-936cb296=""
+          ></path>
+        </svg>
+        <span class="text-white">নতুন ডায়েরি</span>
+      </button>
+    </div>
+
     <Navbar-UserAction />
   </div>
 </template>
 
 <script>
+import swal from "sweetalert";
 export default {
   methods: {
     colorModeSwitcher() {
       this.$colorMode.preference =
         this.$colorMode.value === "dark" ? "light" : "dark";
+    },
+    async sperkArticle() {
+      if (!this.$auth.loggedIn) {
+        swal({
+          title: "আপনি লগইন অবস্থায় নেই",
+          icon: "error"
+        });
+        return;
+      }
+
+      const post = await this.$axios.$post("api/articles/spark");
+
+      this.$router.push({
+        name: "dashboard-diaries-edit-id",
+        params: { id: post.uuid }
+      });
     }
   }
 };

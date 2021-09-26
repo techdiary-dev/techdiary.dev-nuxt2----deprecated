@@ -16,7 +16,9 @@ export default {
       }
     }
 
-    this.isBookmarked = this.bookmarked_by.includes(this.$auth.user.id);
+    if (this.$auth.loggedIn) {
+      this.isBookmarked = this.bookmarked_by.includes(this.$auth.user.id);
+    }
   },
   methods: {
     bookmark(model_name, model_id) {
