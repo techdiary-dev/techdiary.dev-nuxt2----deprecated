@@ -11,14 +11,15 @@ export default {
     };
   },
   mounted() {
-    this.votes.score = this.article.votes.score;
-    if (this.article.votes.summery.length != 0) {
-      if (this.article.votes.summery.UP_VOTE) {
-        this.votes.up_voters = this.article.votes.summery.UP_VOTE.reactors;
+    this.votes.score = this.article.reactions.vote_score;
+
+    if (this.article.reactions.summery.length != 0) {
+      if (this.article.reactions.summery.UP_VOTE) {
+        this.votes.up_voters = this.article.reactions.summery.UP_VOTE.reactors;
       }
 
-      if (this.article.votes.summery.DOWN_VOTE) {
-        this.votes.down_voters = this.article.votes.summery.DOWN_VOTE.reactors;
+      if (this.article.reactions.summery.DOWN_VOTE) {
+        this.votes.down_voters = this.article.reactions.summery.DOWN_VOTE.reactors;
       }
     }
   },

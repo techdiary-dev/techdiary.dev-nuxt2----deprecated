@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import {randomBytes} from "crypto";
+import { randomBytes } from "crypto";
 import upload from "~/mixins/upload";
 
 export default {
@@ -27,18 +27,22 @@ export default {
   mixins: [upload],
   methods: {
     async handleMedia(codemirror, file) {
-      const imageUUID = randomBytes(12).toString('hex');
+      const imageUUID = randomBytes(12).toString("hex");
       const str = `![Uploading...](${imageUUID})`;
       const cursor = codemirror.getCursor();
-      this.document.replaceRange(`\n${str}`, cursor)
+      this.document.replaceRange(`\n${str}`, cursor);
       // this.document.setValue(codemirror.getValue());
-      const url = await this.uploadFile(file, 'techdiary-article-assets')
+      const url = await this.uploadFile(file, "techdiary-article-assets");
       if (url.length) {
-        this.document.setValue(`${codemirror.getValue().replace(str, `![${file.name.split(".")[0]}](${url})`)}\n`)
-        codemirror.setCursor(codemirror.lastLine())
+        this.document.setValue(
+          `${codemirror
+            .getValue()
+            .replace(str, `![${file.name.split(".")[0]}](${url})`)}\n`
+        );
+        codemirror.setCursor(codemirror.lastLine());
       } else {
-        this.document.setValue(`${codemirror.getValue().replace(str, ``)}\n`)
-        codemirror.setCursor(codemirror.lastLine())
+        this.document.setValue(`${codemirror.getValue().replace(str, ``)}\n`);
+        codemirror.setCursor(codemirror.lastLine());
       }
     }
   },
@@ -75,27 +79,27 @@ export default {
     this.document.on("change", codemirror => {
       this.$emit("input", codemirror.getValue());
     });
-    this.codemirror.on("click", (editor) => {
-      console.log("clicked")
-    })
+    this.codemirror.on("click", editor => {
+      console.log("clicked");
+    });
     this.codemirror.on("drop", (codemirror, event) => {
       if (!event.dataTransfer) return;
 
       const files = event.dataTransfer.files;
-      console.log(files)
+      console.log(files);
       if (files.length) {
         event.preventDefault();
         const file = files[0];
-        this.handleMedia(codemirror, file)
+        this.handleMedia(codemirror, file);
       }
-    })
+    });
     this.codemirror.on("paste", (editor, event) => {
       if (event?.clipboardData?.files.length) {
         event.preventDefault();
         const file = event.clipboardData.files[0];
         this.handleMedia(editor, file);
       }
-    })
+    });
   }
 };
 </script>
@@ -110,4 +114,4 @@ export default {
   }
 }
 </style>
-<style src="codemirror/lib/codemirror.css"/>
+<style src="codemirror/lib/codemirror.css" />

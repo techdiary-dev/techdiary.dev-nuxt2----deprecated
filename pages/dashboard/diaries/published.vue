@@ -4,13 +4,13 @@
       <nav class="flex space-x-4">
         <nuxt-link
           :to="{ name: 'dashboard-diaries' }"
-          class="inline-grid text-lg text-gray-400"
+          class="inline-grid text-lg text-gray-400 "
         >
           সকল ডায়েরি({{ counts.total }})
         </nuxt-link>
         <nuxt-link
           :to="{ name: 'dashboard-diaries-published' }"
-          class="inline-grid text-lg text-gray-900"
+          class="inline-grid text-lg text-gray-900 dark:text-gray-50"
         >
           প্রকাশিত({{ counts.published }})
         </nuxt-link>
@@ -41,7 +41,7 @@
 
             <div class="flex items-center mt-2 space-x-2">
               <p
-                class="inline-block px-2 text-xs rounded-md"
+                class="inline-block px-2 text-xs rounded-md dark:text-gray-800"
                 :class="{
                   'bg-green-100': article.isPublished,
                   'bg-red-100': !article.isPublished

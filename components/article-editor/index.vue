@@ -83,7 +83,7 @@
     <!-- ======================================================= -->
     <!-- Markdown Editor start -->
     <!-- ======================================================= -->
-    <div class="p-5 ">
+    <div class="p-5 border-2 border-dashed">
       <markdown-td v-model="article.body" />
     </div>
     <!-- ======================================================= -->
@@ -190,6 +190,9 @@ export default {
     }
   },
   mixins: [upload],
+  mounted() {
+    document.querySelector("html").classList.remove("dark");
+  },
   data() {
     return {
       lastSaved: null,
