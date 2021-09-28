@@ -3,21 +3,15 @@ import swal from "sweetalert";
 export default {
   data() {
     return {
-      bookmarked_by: [],
+      bookmarked_users: [],
       isBookmarked: false
     };
   },
   mounted() {
-    this.votes.score = this.article.reactions.vote_score;
-
-    if (this.article.reactions.summery.length != 0) {
-      if (this.article.reactions.summery.BOOKMARK) {
-        this.bookmarked_by = this.article.reactions.summery.BOOKMARK.reactors;
-      }
-    }
+    this.bookmarked_users = this.article.bookmarked_users;
 
     if (this.$auth.loggedIn) {
-      this.isBookmarked = this.bookmarked_by.includes(this.$auth.user.id);
+      this.isBookmarked = this.bookmarked_users.includes(this.$auth.user.id);
     }
   },
   methods: {

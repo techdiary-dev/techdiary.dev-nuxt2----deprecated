@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Bookmarks</h1>
+    <h1 class="text-xl ">Bookmarks</h1>
   </div>
 </template>
 

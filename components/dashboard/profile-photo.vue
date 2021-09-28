@@ -87,7 +87,8 @@ export default {
     return {
       profilePhoto: this.$auth.user.profilePhoto || null,
       loading: false,
-      dirty: false
+      dirty: false,
+      previous: null
     };
   },
   watch: {

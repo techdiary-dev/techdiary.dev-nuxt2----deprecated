@@ -17,7 +17,7 @@
               {{ article.user.username }}
             </p>
             <p class="text-sm text-dark-secondary">
-              {{ $format(article.created_at, "do LLLL, yyyy") }}
+              {{ $dayjs(article.created_at).format("DD MMMM YYYY") }}
             </p>
           </div>
         </div>
