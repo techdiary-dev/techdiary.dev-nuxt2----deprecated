@@ -11,7 +11,7 @@ export default {
     this.bookmarked_users = this.article.bookmarked_users;
 
     if (this.$auth.loggedIn) {
-      this.isBookmarked = this.bookmarked_users.includes(this.$auth.user.id);
+      this.isBookmarked = this.bookmarked_users?.includes(this.$auth.user.id);
     }
   },
   methods: {

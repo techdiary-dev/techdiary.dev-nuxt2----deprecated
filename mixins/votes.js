@@ -4,23 +4,20 @@ export default {
   data() {
     return {
       votes: {
-        up_voters: [],
-        down_voters: [],
-        score: 0
+        up_voters: this.article?.votes?.up_voters || [],
+        down_voters: this.article?.votes?.down_voters || [],
+        score: this.article?.votes?.score || 0
       }
     };
-  },
-  mounted() {
-    this.votes = this.article.votes;
   },
   computed: {
     isUpvotted() {
       if (!this.$auth.loggedIn) return false;
-      return this.votes.up_voters.includes(this.$auth.user.id);
+      return this.votes?.up_voters?.includes(this.$auth.user.id);
     },
     isDownvotted() {
       if (!this.$auth.loggedIn) return false;
-      return this.votes.down_voters.includes(this.$auth.user.id);
+      return this.votes?.down_voters?.includes(this.$auth.user.id);
     }
   },
   methods: {

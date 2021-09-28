@@ -1,5 +1,5 @@
 <template>
-  <div class="article-card">
+  <div>
     <div class="flex items-center justify-between h-12 mb-2">
       <nuxt-link
         :to="{ name: 'username', params: { username: article.user.username } }"
