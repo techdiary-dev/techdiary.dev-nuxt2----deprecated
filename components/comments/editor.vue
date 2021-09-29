@@ -16,10 +16,8 @@
         Leave a comment
       </div>
 
-      <div v-if="open" class="flex-1 p-2 border-2 border-dashed">
-        <client-only>
-          <markdown-td v-model="comment" />
-        </client-only>
+      <div v-show="open" class="flex-1 p-2 border-2 border-dashed">
+        <markdown-td v-model="comment" />
 
         <button
           class="px-2 py-1 text-white rounded-md bg-primary"
@@ -62,6 +60,7 @@ export default {
     },
     handleSave() {
       this.$emit("save", this.comment);
+      this.open = false;
       this.comment = "";
     }
   }

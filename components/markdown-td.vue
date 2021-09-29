@@ -47,7 +47,8 @@ export default {
     }
   },
   beforeDestroy() {
-    this.codemirror.destroy();
+    // this.codemirror.toTextArea();
+    console.log("markdown-editor: before destroy");
   },
   mounted() {
     require("codemirror/addon/edit/closebrackets");

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <client-only>
     <div class="flex space-x-2 ">
       <app-image
         class="flex-none w-10 h-10 overflow-hidden rounded-full"
@@ -10,7 +10,7 @@
         {{ comment.body }}
       </div>
     </div>
-  </div>
+  </client-only>
 </template>
 <script>
 export default {
