@@ -1,15 +1,6 @@
 import swal from "sweetalert";
 
 export default {
-  data() {
-    return {
-      votes: {
-        up_voters: this.article?.votes?.up_voters || [],
-        down_voters: this.article?.votes?.down_voters || [],
-        score: this.article?.votes?.score || 0
-      }
-    };
-  },
   computed: {
     isUpvotted() {
       if (!this.$auth.loggedIn) return false;
@@ -18,17 +9,17 @@ export default {
     isDownvotted() {
       if (!this.$auth.loggedIn) return false;
       return this.votes?.down_voters?.includes(this.$auth.user.id);
-    }
+    },
   },
   methods: {
     removeFromUpvotterList() {
       this.votes.up_voters = this.votes.up_voters.filter(
-        userId => userId != this.$auth.user.id
+        (userId) => userId != this.$auth.user.id
       );
     },
     removeFromDownvotterList() {
       this.votes.down_voters = this.votes.down_voters.filter(
-        userId => userId != this.$auth.user.id
+        (userId) => userId != this.$auth.user.id
       );
     },
     addToUpvoters() {
@@ -41,7 +32,7 @@ export default {
       if (!this.$auth.loggedIn) {
         swal({
           title: "আপনি লগইন অবস্থায় নেই",
-          icon: "error"
+          icon: "error",
         });
         return;
       }
@@ -49,7 +40,7 @@ export default {
       this.$axios.$post(`api/vote`, {
         model_name,
         model_id,
-        vote: "UP_VOTE"
+        vote: "UP_VOTE",
       });
 
       if (this.isUpvotted) {
@@ -70,7 +61,7 @@ export default {
       if (!this.$auth.loggedIn) {
         swal({
           title: "আপনি লগইন অবস্থায় নেই",
-          icon: "error"
+          icon: "error",
         });
         return;
       }
@@ -78,7 +69,7 @@ export default {
       this.$axios.$post(`api/vote`, {
         model_name,
         model_id,
-        vote: "DOWN_VOTE"
+        vote: "DOWN_VOTE",
       });
 
       if (this.isDownvotted) {
@@ -94,6 +85,6 @@ export default {
       }
 
       this.removeFromUpvotterList();
-    }
-  }
+    },
+  },
 };

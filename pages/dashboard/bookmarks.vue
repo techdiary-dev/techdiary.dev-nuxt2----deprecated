@@ -38,7 +38,7 @@
         </button>
 
         <nuxt-link
-          class="text-gray-700  dark:text-gray-300"
+          class="text-gray-700 dark:text-gray-300"
           :to="{
             name: 'username-slug',
             params: { username: article.user.username, slug: article.slug }

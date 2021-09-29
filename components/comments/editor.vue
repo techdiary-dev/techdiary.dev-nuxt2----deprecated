@@ -27,6 +27,13 @@
         >
           Submit
         </button>
+        <button
+          type="button"
+          class="px-2 py-1 text-white bg-red-500 rounded-md"
+          @click="open = false"
+        >
+          Close
+        </button>
       </div>
     </div>
   </div>

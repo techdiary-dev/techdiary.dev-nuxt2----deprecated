@@ -46,6 +46,9 @@ export default {
       }
     }
   },
+  beforeDestroy() {
+    this.codemirror.destroy();
+  },
   mounted() {
     require("codemirror/addon/edit/closebrackets");
     require("codemirror/addon/edit/continuelist");
