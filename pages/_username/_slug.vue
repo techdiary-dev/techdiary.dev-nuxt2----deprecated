@@ -1,11 +1,11 @@
 <template>
   <div class="relative py-16 overflow-hidden">
     <div v-if="$fetchState.pending">
-      <Loader />
+      <Loader/>
     </div>
     <div v-else class="relative max-w-3xl px-4 mx-auto sm:px-6 lg:px-8">
       <div class="overflow-hidden rounded-md">
-        <app-image :src="article.thumbnail" />
+        <app-image :src="article.thumbnail"/>
       </div>
 
       <div class="mx-auto my-10 text-lg max-w-prose">
@@ -109,7 +109,7 @@
       ></div>
 
       <div class="my-10 ">
-        <comments />
+        <comments/>
       </div>
     </div>
   </div>
@@ -118,21 +118,45 @@
 <script>
 import bookmark from "~/mixins/bookmark";
 import votes from "~/mixins/votes";
+
 export default {
   data() {
     return {
       article: {},
-      comments: []
+      comments: [],
+      votes: {
+        up_voters: [],
+        down_voters: [],
+        score: 0,
+      },
+      bookmarked_users: [],
+      isBookmarked: false
+
     };
   },
   mixins: [votes, bookmark],
   fetchOnServer: false,
+  updated() {
+    document.querySelectorAll('.heading-permalink').forEach(item => {
+      item.innerHTML = item.innerText
+    })
+  },
   async fetch() {
     try {
-      const { data: article } = await this.$axios.get(
+      const {data: article} = await this.$axios.get(
         `api/articles/slug/${this.$route.params.slug}`
       );
       this.article = article.data;
+      this.votes = {
+        up_voters: this.article?.votes?.up_voters || [],
+        down_voters: this.article?.votes?.down_voters || [],
+        score: this.article?.votes?.score || 0,
+      }
+      this.bookmarked_users = this.article.bookmarked_users;
+
+      if (this.$auth.loggedIn) {
+        this.isBookmarked = this.bookmarked_users?.includes(this.$auth.user.id);
+      }
     } catch (error) {
       this.$nuxt.error({
         statusCode: 400,

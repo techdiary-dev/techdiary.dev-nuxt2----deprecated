@@ -149,9 +149,29 @@
 // import reactions from "~/mixins/reactions";
 import votes from "~/mixins/votes";
 import bookmark from "~/mixins/bookmark";
+
 export default {
   props: ["article"],
   mixins: [votes, bookmark],
+  data() {
+    return {
+      votes: {
+        up_voters: this.article?.votes?.up_voters || [],
+        down_voters: this.article?.votes?.down_voters || [],
+        score: this.article?.votes?.score || 0,
+      },
+      bookmarked_users: [],
+      isBookmarked: false
+
+    }
+  },
+  mounted() {
+    this.bookmarked_users = this.article.bookmarked_users;
+
+    if (this.$auth.loggedIn) {
+      this.isBookmarked = this.bookmarked_users?.includes(this.$auth.user.id);
+    }
+  },
   computed: {
     articleUrl() {
       return {
@@ -171,9 +191,11 @@ export default {
   &__thumbnail {
     @apply rounded-sm overflow-hidden;
   }
+
   &__title {
     @apply block text-xl font-semibold text-gray-700 dark:text-gray-300;
   }
+
   &__excerpt {
     @apply block text-gray-500 dark:text-gray-400;
   }
@@ -185,6 +207,7 @@ export default {
   &__tags {
     @apply flex flex-wrap gap-2;
   }
+
   &__tag {
     @apply text-gray-500 hover:text-gray-700;
   }
@@ -199,6 +222,7 @@ export default {
     &--upvote {
       @apply border-r;
     }
+
     &--downvote {
       @apply px-2;
     }
