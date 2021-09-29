@@ -4,18 +4,18 @@
       <Loader />
     </div>
     <div v-else class="relative max-w-3xl px-4 mx-auto sm:px-6 lg:px-8">
-      <div class="overflow-hidden rounded-md">
+      <div class="overflow-hidden rounded-md" v-if="article.thumbnail">
         <app-image :src="article.thumbnail" />
       </div>
 
       <div class="mx-auto my-10 text-lg max-w-prose">
         <h1
-          class="block mt-2 text-3xl font-semibold leading-10 tracking-tight text-center text-gray-900 sm:text-4xl"
+          class="block mt-2 text-3xl font-semibold leading-10 tracking-tight text-center text-gray-900 dark:text-gray-200 sm:text-4xl"
         >
           {{ article.title }}
         </h1>
 
-        <p class="text-xl text-center text-dark-secondary">
+        <p class="text-xl text-center text-dark-secondary dark:text-gray-400">
           {{ $dayjs(article.created_at).format("DD MMMM YYYY") }}
         </p>
       </div>
@@ -30,7 +30,7 @@
           />
           <p class="text-xl ">{{ article.user.name }}</p>
         </div>
-        <div class="flex items-center ">
+        <div class="flex items-center">
           <button @click="bookmark('ARTICLE', article.id)">
             <svg
               viewBox="0 0 14 18"
@@ -104,12 +104,12 @@
       <!-- users and actions end-->
 
       <div
-        class="mx-auto mt-6 prose prose-xl text-gray-500 max-w-none prose-indigo"
+        class="mx-auto mt-6 prose prose-xl text-gray-500 max-w-none prose-primary content-typography"
         v-html="article.body.html"
       ></div>
 
       <div class="my-10 ">
-        <comments />
+        <comments model_name="ARTICLE" :model_id="article.id" />
       </div>
     </div>
   </div>
@@ -121,12 +121,10 @@ import votes from "~/mixins/votes";
 export default {
   data() {
     return {
-      article: {},
-      comments: []
+      article: {}
     };
   },
   mixins: [votes, bookmark],
-  fetchOnServer: false,
   async fetch() {
     try {
       const { data: article } = await this.$axios.get(
@@ -142,26 +140,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss">
-.layout {
-  @apply grid grid-cols-12;
-
-  &__aside {
-    @apply sticky top-0 px-6;
-    @apply self-start top-[50px];
-
-    &--left {
-      @apply hidden md:block;
-      @apply col-span-3 pt-6 lg:col-span-2;
-    }
-  }
-
-  &__main {
-    @apply md:px-6 pt-3 md:pt-6;
-    @apply col-span-12 md:col-span-9 lg:col-span-8;
-    @apply md:border-l border-gray-200;
-    @apply min-h-screen;
-  }
-}
-</style>

@@ -107,7 +107,7 @@ export default {
 .CodeMirror.cm-s-default.CodeMirror-wrap {
   font-size: 16px;
   height: auto;
-  min-height: 500px;
+  min-height: 180px;
 
   .CodeMirror-scroll {
     padding-bottom: 100px;

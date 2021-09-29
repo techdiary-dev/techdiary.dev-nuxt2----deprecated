@@ -93,7 +93,7 @@
         <span class="dashboard-menu__label">প্রোফাইল হালনাগাদ</span>
       </nuxt-link>
 
-      <nuxt-link
+      <!-- <nuxt-link
         :to="{ name: 'dashboard-sessions' }"
         class="dashboard-menu__link"
       >
@@ -113,7 +113,7 @@
           ></path>
         </svg>
         <span class="dashboard-menu__label">Sessions</span>
-      </nuxt-link>
+      </nuxt-link> -->
     </div>
   </div>
 </template>
