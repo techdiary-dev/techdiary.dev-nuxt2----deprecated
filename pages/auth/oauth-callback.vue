@@ -31,11 +31,11 @@ export default {
     try {
       await this.$axios.$post(`api/auth/oauth/signed-login?${query}`);
 
-      // await this.$auth.loginWith("laravelSanctum", {
-      //   data: {}
-      // });
+      await this.$auth.loginWith("laravelSanctum", {
+        data: {}
+      });
 
-      await this.$auth.fetchUser();
+      // await this.$auth.fetchUser();
 
       location.href = "/";
     } catch (error) {
