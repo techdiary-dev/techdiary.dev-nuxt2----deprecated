@@ -35,7 +35,7 @@
         ></path>
       </svg>
 
-      <p action-links__label>রিডিং লিস্ট</p>
+      <p class="action-links__label">রিডিং লিস্ট</p>
     </nuxt-link>
 
     <button @click="sperkArticle" class="action-links__link">
@@ -54,7 +54,7 @@
         />
       </svg>
 
-      <p action-links__label>নতুন ডায়েরি</p>
+      <p class="action-links__label">নতুন ডায়েরি</p>
     </button>
   </div>
 </template>

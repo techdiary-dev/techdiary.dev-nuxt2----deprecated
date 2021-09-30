@@ -6,7 +6,7 @@
 
     <div class="flex flex-col gap-3 mt-3">
       <label>
-        <p class="text-gray-600 ">ইউজারনেম / ইমেইল</p>
+        <p class="text-gray-600">ইউজারনেম / ইমেইল</p>
         <input
           type="text"
           class="w-full border-gray-300 rounded border-1 focus:ring-1 focus:ring-gray-600"
@@ -14,7 +14,7 @@
       </label>
 
       <label>
-        <p class="text-gray-600 ">পাসওয়ার্ড</p>
+        <p class="text-gray-600">পাসওয়ার্ড</p>
         <input
           type="password"
           class="w-full border-gray-300 rounded-sm border-1 focus:ring-1 focus:ring-gray-600"

@@ -32,8 +32,9 @@
   @apply sticky top-0 left-0 z-30 w-full border-b;
 
   .navbar__inner {
+    @apply fill-current;
     @apply bg-white dark:bg-blueGray-900;
-    @apply h-12 px-4 md:px-6;
+    @apply h-12;
     @apply flex justify-between items-center;
   }
 
