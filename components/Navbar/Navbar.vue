@@ -1,28 +1,41 @@
 <template>
-  <div class="navbar app-border-color">
-    <div class="navbar__inner wrapper">
-      <div class="navbar__left">
-        <button class="navbar__hambargur-button" @click="triggerSidebar(true)">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="navbar__hambargur-icon"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+  <div>
+    <div
+      class="flex items-center justify-center p-4 bg-red-200 border-red-500 rounded-md "
+    >
+      <p>
+        আমরা নতুন UI এবং ফিচার নিয়ে কাজ করছি, তাই লগইন এর মত কিছু ফিচার বর্তমান
+        কাজ নাও করতে পারে। এই অসুবিধার জন্য অত্যন্ত দুঃখিত
+      </p>
+    </div>
+    <div class="navbar app-border-color">
+      <div class="navbar__inner wrapper">
+        <div class="navbar__left">
+          <button
+            class="navbar__hambargur-button"
+            @click="triggerSidebar(true)"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-        <nuxt-link to="/" class="inline-block ">
-          <Logos-Text class="navbar__logo" />
-        </nuxt-link>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="navbar__hambargur-icon"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <nuxt-link to="/" class="inline-block ">
+            <Logos-Text class="navbar__logo" />
+          </nuxt-link>
+        </div>
+        <Navbar-Links />
       </div>
-      <Navbar-Links />
     </div>
   </div>
 </template>
