@@ -11,12 +11,15 @@
       <div
         @click="handleOpenEditor"
         v-if="!open"
-        class="flex items-center justify-center flex-1 w-full h-10 transition duration-150 bg-gray-100 rounded-full cursor-pointer hover:bg-gray-200"
+        class="flex items-center justify-center flex-1 w-full h-10 transition duration-150 bg-gray-100 rounded-full cursor-pointer dark:bg-gray-700 hover:bg-gray-200"
       >
         Leave a comment
       </div>
 
-      <div v-show="open" class="flex-1 p-2 border-2 border-dashed">
+      <div
+        v-show="open"
+        class="flex-1 p-2 border-2 border-dashed dark:border-gray-700"
+      >
         <markdown-td v-model="comment" />
 
         <button

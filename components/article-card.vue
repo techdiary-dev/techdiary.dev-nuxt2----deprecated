@@ -44,7 +44,7 @@
       </button>
     </div>
 
-    <div class="article-card__thumbnail">
+    <div class="article-card__thumbnail" v-if="article.thumbnail">
       <nuxt-link :to="articleUrl">
         <img
           :src="article.thumbnail"
@@ -120,7 +120,6 @@
             </svg>
           </button>
         </div>
-
         <p class="flex items-center space-x-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -158,12 +157,11 @@ export default {
       votes: {
         up_voters: this.article?.votes?.up_voters || [],
         down_voters: this.article?.votes?.down_voters || [],
-        score: this.article?.votes?.score || 0,
+        score: this.article?.votes?.score || 0
       },
       bookmarked_users: [],
       isBookmarked: false
-
-    }
+    };
   },
   mounted() {
     this.bookmarked_users = this.article.bookmarked_users;

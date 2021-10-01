@@ -33,6 +33,7 @@
         দিতে পারেন
         <a
           target="_blank"
+          class="font-bold text-gray-800"
           href="https://github.com/techdiary-dev/feedback/issues/new/choose"
           >ইস্যু তৈরি</a
         >

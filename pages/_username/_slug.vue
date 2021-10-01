@@ -30,7 +30,18 @@
           />
           <p class="text-xl ">{{ article.user.name }}</p>
         </div>
-        <div class="flex items-center">
+        <div class="flex items-center space-x-2">
+          <nuxt-link
+            v-if="$auth.loggedIn && article.user.id === $auth.user.id"
+            class="font-semibold "
+            :to="{
+              name: 'dashboard-diaries-edit-id',
+              params: { id: article.id }
+            }"
+          >
+            ইডিট করুন
+          </nuxt-link>
+
           <button @click="bookmark('ARTICLE', article.id)">
             <svg
               viewBox="0 0 14 18"
@@ -50,53 +61,51 @@
               ></path>
             </svg>
           </button>
+
           <!-- Actions start -->
-          <div class="flex items-center mt-2 space-x-5">
-            <div class="flex items-center ">
-              <button
-                class="vote__button vote__button--upvote"
-                @click="upVote('ARTICLE', article.id)"
-                :class="{ 'vote__button--active': isUpvotted }"
+          <div class="vote">
+            <button
+              class="vote__button vote__button--upvote"
+              @click="upVote('ARTICLE', article.id)"
+              :class="{ 'vote__button--active': isUpvotted }"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 15l7-7 7 7"
-                  />
-                </svg>
-              </button>
-
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 15l7-7 7 7"
+                />
+              </svg>
               <span>{{ votes.score }}</span>
+            </button>
 
-              <button
-                class="vote__button vote__button--downvote"
-                :class="{ 'vote__button--active': isDownvotted }"
-                @click="downVote('ARTICLE', article.id)"
+            <button
+              class="vote__button vote__button--downvote"
+              :class="{ 'vote__button--active': isDownvotted }"
+              @click="downVote('ARTICLE', article.id)"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-            </div>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
           </div>
           <!-- Actions end -->
         </div>
@@ -104,7 +113,7 @@
       <!-- users and actions end-->
 
       <div
-        class="mx-auto mt-6 prose prose-xl text-gray-500 max-w-none prose-primary content-typography"
+        class="mx-auto mt-6 content-typography"
         v-html="article.body.html"
       ></div>
 
@@ -165,3 +174,25 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.vote {
+  @apply inline-flex overflow-hidden rounded-md;
+  &__button {
+    @apply bg-gray-100 hover:bg-gray-200;
+    @apply dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700;
+    @apply flex items-center px-3 py-1 transition-all duration-100;
+    &--upvote {
+      @apply border-r;
+    }
+
+    &--downvote {
+      @apply px-2;
+    }
+
+    &--active {
+      @apply text-primary bg-gray-200 dark:bg-gray-700;
+    }
+  }
+}
+</style>
