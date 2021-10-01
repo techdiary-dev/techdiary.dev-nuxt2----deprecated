@@ -92,7 +92,8 @@ export default {
         url: process.env.NUXT_ENV_API_URL,
         endpoints: {
           login: {
-            url: "/api/auth/login"
+            // url: "/api/auth/login"
+            url: "/api/auth/login-spark"
           },
           logout: {
             url: "/api/auth/logout",

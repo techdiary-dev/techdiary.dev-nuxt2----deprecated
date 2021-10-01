@@ -80,7 +80,7 @@
       <span class="login__label">গুগল দিয়ে লগইন</span>
     </button>
 
-    <nuxt-link
+    <!-- <nuxt-link
       :to="{ name: 'auth-login' }"
       class="login__button login__button--auth "
     >
@@ -97,7 +97,7 @@
         />
       </svg>
       <span class="login__label">ইমেইল দিয়ে লগইন</span>
-    </nuxt-link>
+    </nuxt-link> -->
   </div>
 </template>
 
