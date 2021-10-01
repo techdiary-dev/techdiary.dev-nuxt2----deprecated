@@ -133,19 +133,20 @@ import votes from "~/mixins/votes";
 export default {
   head() {
     return {
-      title: this.article.title || "Loading...",
+      title: this.article?.title || "Loading...",
+
       meta: [
         {
           name: "description",
-          content: this.article.seo.seo_description
+          content: this.article?.seo?.seo_description || ""
         },
         {
           property: "og:title",
-          content: this.article.seo.seo_title || this.article.title
+          content: this.article?.seo?.seo_title || this.article?.title
         },
         {
           property: "og:image",
-          content: this.article.seo.og_image || this.article.thumbnail
+          content: this.article?.seo?.og_image || this.article?.thumbnail
         }
       ]
     };
