@@ -35,8 +35,6 @@ export default {
         data: {}
       });
 
-      // await this.$auth.fetchUser();
-
       location.href = "/";
     } catch (error) {
       this.error = error.response.data;
