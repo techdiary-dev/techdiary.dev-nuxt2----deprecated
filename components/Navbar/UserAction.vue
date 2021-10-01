@@ -90,28 +90,6 @@
           </nuxt-link>
 
           <nuxt-link
-            :to="{ name: 'dashboard-diaries-new' }"
-            class="user-action-dropdown__item"
-          >
-            <svg
-              class="user-action-dropdown__icon"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-              />
-            </svg>
-
-            <p class="user-action-dropdown__label">নতুন ডায়েরি</p>
-          </nuxt-link>
-
-          <nuxt-link
             :to="{ name: 'dashboard-settings' }"
             class="user-action-dropdown__item"
           >
