@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "td-client-beta",
+    titleTemplate: "%s | টেকডায়েরি",
     htmlAttrs: {
       lang: "en"
     },

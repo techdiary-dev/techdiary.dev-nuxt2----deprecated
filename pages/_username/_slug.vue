@@ -4,9 +4,11 @@
       <Loader />
     </div>
     <div v-else class="relative max-w-3xl px-4 mx-auto sm:px-6 lg:px-8">
-      <div class="overflow-hidden rounded-md" v-if="article.thumbnail">
+      <!-- Thumbnail start -->
+      <div class="-ml-20 -mr-20" v-if="article.thumbnail">
         <app-image :src="article.thumbnail" />
       </div>
+      <!-- Thumbnail end -->
 
       <div class="mx-auto my-10 text-lg max-w-prose">
         <h1
@@ -129,6 +131,25 @@ import bookmark from "~/mixins/bookmark";
 import votes from "~/mixins/votes";
 
 export default {
+  head() {
+    return {
+      title: this.article.title || "Loading...",
+      meta: [
+        {
+          name: "description",
+          content: this.article.seo.seo_description
+        },
+        {
+          property: "og:title",
+          content: this.article.seo.seo_title || this.article.title
+        },
+        {
+          property: "og:image",
+          content: this.article.seo.og_image || this.article.thumbnail
+        }
+      ]
+    };
+  },
   data() {
     return {
       article: {},
@@ -143,7 +164,6 @@ export default {
     };
   },
   mixins: [votes, bookmark],
-  fetchOnServer: false,
   updated() {
     document.querySelectorAll(".heading-permalink").forEach(item => {
       item.innerHTML = item.innerText;
