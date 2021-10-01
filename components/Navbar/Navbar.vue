@@ -3,7 +3,7 @@
     <div
       class="flex items-center justify-center p-4 bg-red-200 border-red-500 rounded-md "
     >
-      <p>
+      <p class="text-gray-600 ">
         আমরা নতুন UI এবং ফিচার নিয়ে কাজ করছি, তাই লগইন এর মত কিছু ফিচার বর্তমান
         কাজ নাও করতে পারে। এই অসুবিধার জন্য অত্যন্ত দুঃখিত
       </p>
