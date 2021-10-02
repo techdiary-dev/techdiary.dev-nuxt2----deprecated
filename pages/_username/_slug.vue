@@ -125,7 +125,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import bookmark from "~/mixins/bookmark";
 import votes from "~/mixins/votes";
@@ -165,11 +164,6 @@ export default {
     };
   },
   mixins: [votes, bookmark],
-  updated() {
-    document.querySelectorAll(".heading-permalink").forEach(item => {
-      item.innerHTML = item.innerText;
-    });
-  },
   async fetch() {
     try {
       const { data: article } = await this.$axios.get(
