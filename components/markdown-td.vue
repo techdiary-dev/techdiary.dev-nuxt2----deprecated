@@ -107,6 +107,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss">
 .CodeMirror.cm-s-default.CodeMirror-wrap {
   font-size: 16px;
@@ -117,5 +118,11 @@ export default {
     padding-bottom: 100px;
   }
 }
+
+.cm-header {
+  @apply text-gray-900 dark:text-gray-100 font-extrabold;
+  @apply flex items-center space-x-2;
+}
 </style>
+
 <style src="codemirror/lib/codemirror.css" />

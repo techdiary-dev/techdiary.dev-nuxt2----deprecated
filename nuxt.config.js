@@ -21,6 +21,7 @@ export default {
   plugins: [
     "~/plugins/visibility-observer",
     "~/plugins/clickaway",
+    "~/plugins/resizeable-input",
     "~/plugins/multi-select"
   ],
 

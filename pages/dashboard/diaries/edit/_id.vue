@@ -6,6 +6,7 @@
 <script>
 export default {
   layout: "blank",
+  middleware: ["auth"],
   head: {
     title: "Edit ডায়েরি"
   }

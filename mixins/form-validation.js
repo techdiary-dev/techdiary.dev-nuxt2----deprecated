@@ -5,6 +5,11 @@ export default {
     };
   },
   methods: {
+    catchValidationErrors(error) {
+      if (error.response.status === 422) {
+        this.errors = error.response.data.errors;
+      }
+    },
     hasError(property) {
       return this.errors[property] !== undefined;
     },

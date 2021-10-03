@@ -60,7 +60,7 @@
         </svg>
       </label>
     </div>
-
+    <!--  -->
     <div class="my-3">
       <label for="multi-tag" class="text-lg font-bold text-dark">ট্যাগ</label>
       <multi-select
@@ -82,31 +82,37 @@
       ></multi-select>
     </div>
 
-    <div class="mt-4 ">
-      <h2 class="text-lg font-bold ">Seo settings</h2>
+    <div class="mt-10 ">
+      <h2 class="text-lg font-bold">SEO বিষয়ক সেটিং</h2>
 
       <div class="flex flex-col space-y-4">
-        <!-- <form-file-uploader
-          v-model="article.seo.og_image"
-          preset="techdiary-article-covers"
-        /> -->
+        <div class="p-2 border border-dashed">
+          <form-file-uploader
+            v-model="seo.og_image"
+            preset="techdiary-article-covers"
+            label="Open Graph image"
+          />
+          <p class="text-sm ">
+            সোশ্যাল মিডিয়া তে যদি আপনার ডায়েরির জন্যে ভিন্ন কোন ছবি দেখাতে চান,
+            তাহলে সেই ছবি এখানে আপলোড করুন
+          </p>
+        </div>
 
         <form-input
-          v-model="article.seo.seo_title"
+          v-model="seo.seo_title"
           label="SEO Title (Optional)"
           desc="The SEO Title will be shown in place of your Title on search engine results pages, such as a Google search. SEO titles between 40 and 50 characters with commonly searched words have the best click-through-rates."
           placeholder="Seo title"
         />
-
         <form-textarea
-          v-model="article.seo.seo_description"
+          v-model="seo.seo_description"
           label="SEO Description (Optional)"
           desc="The SEO Description will be used in place of your Subtitle on search engine results pages. Good SEO descriptions utilize keywords, summarize the story and are between 140-156 characters long."
           placeholder="Enter meta description…"
         />
 
         <form-input
-          v-model="article.seo.canonical_url"
+          v-model="seo.canonical_url"
           label="Are you republishing?"
           desc="Change the canonical URL of this article to the original article"
           placeholder="Paste the original URL here"
@@ -115,20 +121,30 @@
         <div class="flex items-center space-x-2">
           <input
             type="checkbox"
-            v-model="article.settings.disabled_comments"
+            v-model="settings.disabled_comments"
             id="disable_comments"
           />
-          <label for="disable_comments">Disable comments</label>
+          <label for="disable_comments">মন্ত্যব্য বক্স বন্ধ করুন</label>
         </div>
       </div>
     </div>
+    <!--  -->
   </div>
 </template>
 
 <script>
+import formValidation from "~/mixins/form-validation";
 export default {
   props: {
     article: {
+      type: Object,
+      required: true
+    },
+    seo: {
+      type: Object,
+      required: true
+    },
+    settings: {
       type: Object,
       required: true
     },
@@ -137,6 +153,7 @@ export default {
       default: false
     }
   },
+  mixins: [formValidation],
   data() {
     return {
       tagOptions: []
@@ -150,7 +167,7 @@ export default {
     async createNewTag(name) {
       const { data } = await this.$axios.$post("/api/tags", { name });
       this.tagOptions.push(data);
-      this.settings.tags.push(data);
+      this.article.tags.push(data);
     },
     closeMeta() {
       this.$emit("closeMeta");
