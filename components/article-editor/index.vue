@@ -157,12 +157,6 @@ import upload from "~/mixins/upload";
 import formValidation from "~/mixins/form-validation";
 
 export default {
-  props: {
-    loading: {
-      type: Boolean,
-      default: false
-    }
-  },
   mixins: [upload, formValidation],
   data() {
     return {
@@ -171,6 +165,7 @@ export default {
       interval: null,
       showOptions: false,
       editorLoading: false,
+      loading: false,
 
       slug: "",
       //article props
@@ -264,10 +259,13 @@ export default {
     }, 1000),
     async save(payload) {
       try {
+        this.loading = true;
         const res = await this.$axios.$put(
           `api/articles/uuid/${this.$route.params.id}`,
           payload
         );
+
+        this.loading = false;
 
         clearInterval(this.interval);
         this.touchLastSaved();
