@@ -42,7 +42,11 @@
               {{ article.isPublished ? "প্রকাশিত" : "খসড়া" }}
             </button>
 
-            <a class="font-bold ">
+            <a
+              class="font-bold"
+              target="_blank"
+              :href="`/${$auth.user.username}/${slug}`"
+            >
               Preview
             </a>
 
