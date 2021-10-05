@@ -19,10 +19,10 @@
     <div class="flex flex-col my-5 space-y-3">
       <article
         class="flex space-x-2"
-        v-for="article in bookmarks"
+        v-for="(article, index) in bookmarks"
         :key="article.id"
       >
-        <button class="w-5 h-5 ">
+        <button class="w-5 h-5 " @click="removeBookmark(article.id, index)">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-5 h-5"
@@ -71,6 +71,12 @@ export default {
 
     this.bookmarks = this.bookmarks.concat(data);
     this.pageMeta = { current_page, last_page };
+  },
+  methods: {
+    async removeBookmark(uuid, index) {
+      this.$axios.$delete(`/api/bookmarks?model_name=ARTICLE&model_id=${uuid}`);
+      this.bookmarks.splice(index, 1);
+    }
   }
 };
 </script>
