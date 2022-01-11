@@ -41,7 +41,7 @@ export default {
 <style scoped>
 .td-button {
   @apply px-3 py-1;
-  @apply bg-blueGray-800 text-white;
+  @apply bg-slate-800 text-white;
   @apply flex items-center rounded;
   @apply focus:outline-none;
 }

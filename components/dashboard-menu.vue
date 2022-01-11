@@ -143,13 +143,13 @@ export default {
 
   &__link {
     @apply flex items-center space-x-1;
-    @apply text-gray-600 dark:text-blueGray-300;
+    @apply text-gray-600 dark:text-slate-300;
     @apply hover:text-gray-900 dark:hover:text-gray-400;
 
     &--create {
-      @apply flex items-center justify-center text-blueGray-100 font-semibold;
-      @apply bg-blueGray-800 rounded-3xl px-1 py-2;
-      @apply hover:text-blueGray-100;
+      @apply flex items-center justify-center text-slate-100 font-semibold;
+      @apply bg-slate-800 rounded-3xl px-1 py-2;
+      @apply hover:text-slate-100;
     }
   }
 

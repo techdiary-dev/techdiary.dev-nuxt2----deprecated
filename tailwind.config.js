@@ -17,23 +17,20 @@ const isFirefoxPlugin = plugin(function({ addVariant, e, postcss }) {
 
 module.exports = {
   mode: "jit",
-  purge: {
-    enabled: process.env.NODE_ENV === "production",
-    content: [
-      "./components/**/*.{vue,js}",
-      "./layouts/**/*.vue",
-      "./pages/**/*.vue",
-      "./plugins/**/*.{js,ts}",
-      "./nuxt.config.{js,ts}"
-    ]
-  },
+  content: [
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./nuxt.config.{js,ts}"
+  ],
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
         primary: "#8A9CFE",
         secondary: "#FDF9F3",
-        blueGray: colors.blueGray
+        slate: colors.slate
       },
       fontFamily: {
         KohinoorBangla: ["KohinoorBangla", "Nunito", "Arial"],

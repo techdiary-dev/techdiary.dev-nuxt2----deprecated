@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="text-sm font-semibold text-gray-600 dark:text-blueGray-300">
+    <h3 class="text-sm font-semibold text-gray-600 dark:text-slate-300">
       সর্বশেষ নিবন্ধিত ব্যবহারকারী
     </h3>
 

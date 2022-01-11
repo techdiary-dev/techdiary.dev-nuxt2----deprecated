@@ -31,7 +31,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
-    "@nuxtjs/tailwindcss",
+    "@nuxt/postcss8",
     "@nuxtjs/color-mode"
   ],
 
@@ -59,10 +59,6 @@ export default {
     plugins: ["relativeTime"]
   },
 
-  tailwindcss: {
-    cssPath: "~/asset/styles/app.scss"
-  },
-
   colorMode: {
     classSuffix: ""
   },
@@ -71,7 +67,14 @@ export default {
   content: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {}
+      }
+    }
+  },
 
   cloudinary: {
     cloudName: process.env.NUXT_APP_CLOUDINARY_CLOUDNAME,

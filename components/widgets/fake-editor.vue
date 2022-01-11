@@ -39,7 +39,7 @@ export default {
 <style scoped lang="scss">
 .fake-editor {
   @apply transition-all duration-150;
-  @apply bg-gray-200 dark:bg-blueGray-700 hover:bg-white dark:hover:bg-blueGray-600;
+  @apply bg-gray-200 dark:bg-slate-700 hover:bg-white dark:hover:bg-slate-600;
   @apply border border-gray-300 dark:border-gray-600;
   @apply flex p-5 rounded cursor-pointer;
 

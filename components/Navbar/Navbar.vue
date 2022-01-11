@@ -50,7 +50,7 @@
 
   .navbar__inner {
     @apply fill-current;
-    @apply bg-white dark:bg-blueGray-900;
+    @apply bg-white dark:bg-slate-900;
     @apply h-12;
     @apply flex justify-between items-center;
   }

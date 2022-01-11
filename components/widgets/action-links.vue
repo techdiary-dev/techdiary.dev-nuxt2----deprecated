@@ -91,7 +91,7 @@ export default {
   &__link {
     @apply flex items-center gap-1;
     @apply text-base font-light;
-    @apply hover:bg-gray-100 dark:hover:bg-blueGray-700 transition duration-100;
+    @apply hover:bg-gray-100 dark:hover:bg-slate-700 transition duration-100;
     @apply p-1 rounded-sm;
     @apply text-sm;
     @apply text-gray-700 dark:text-gray-400;

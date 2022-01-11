@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="text-sm font-semibold text-gray-600 dark:text-blueGray-300 ">
+    <h3 class="text-sm font-semibold text-gray-600 dark:text-slate-300 ">
       নির্বাচিত ট্যাগ সমূহ
     </h3>
     <div class="mt-2 tags">
