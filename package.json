@@ -11,11 +11,11 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
-    "@nuxt/content": "^1.14.0",
+    "@nuxt/content": "^1.15.1",
     "@nuxtjs/auth-next": "^5.0.0-1624817847.21691f1",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/cloudinary": "^1.0.3",
-    "@nuxtjs/dayjs": "^1.4.0",
+    "@nuxtjs/dayjs": "^1.4.1",
     "@nuxtjs/toast": "^3.3.1",
     "bnnum": "^1.0.6",
     "codemirror": "^5.62.3",
@@ -38,7 +38,6 @@
     "@tailwindcss/line-clamp": "^0.3.0",
     "@tailwindcss/typography": "^0.5.0",
     "autoprefixer": "^10.4.2",
-    "fiber": "^1.0.4",
     "fibers": "^5.0.0",
     "postcss": "^8.4.5",
     "sass": "^1.36.0",
