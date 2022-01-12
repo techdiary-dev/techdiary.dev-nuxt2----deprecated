@@ -1,9 +1,9 @@
 <template>
-  <div class="my-10 ">
+  <div class="my-10">
     <Loader v-if="!error" />
     <div v-else>
-      <h1 class="text-3xl ">Something went wrong</h1>
-      <h2 class="text-2xl text-red-500 ">
+      <h1 class="text-3xl">Something went wrong</h1>
+      <h2 class="text-2xl text-red-500">
         {{ error.message }}
       </h2>
     </div>
@@ -12,9 +12,12 @@
 
 <script>
 export default {
+  head: {
+    title: "Please wait...",
+  },
   data() {
     return {
-      error: ""
+      error: "",
     };
   },
   async mounted() {
@@ -32,7 +35,7 @@ export default {
       await this.$axios.$post(`api/auth/oauth/signed-login?${query}`);
 
       await this.$auth.loginWith("laravelSanctum", {
-        data: {}
+        data: {},
       });
 
       location.href = "/";
@@ -40,6 +43,6 @@ export default {
       this.error = error.response.data;
       console.log(error.response.data);
     }
-  }
+  },
 };
 </script>

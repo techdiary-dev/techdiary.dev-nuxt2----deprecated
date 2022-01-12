@@ -3,15 +3,15 @@ export default {
   head: {
     titleTemplate: "%s | টেকডায়েরি",
     htmlAttrs: {
-      lang: "en"
+      lang: "en",
     },
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" },
-      { name: "format-detection", content: "telephone=no" }
+      { name: "format-detection", content: "telephone=no" },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.svg" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.svg" }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -22,7 +22,7 @@ export default {
     "~/plugins/visibility-observer",
     "~/plugins/clickaway",
     "~/plugins/resizeable-input",
-    "~/plugins/multi-select"
+    "~/plugins/multi-select",
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -32,7 +32,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxt/postcss8",
-    "@nuxtjs/color-mode"
+    "@nuxtjs/color-mode",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -44,23 +44,23 @@ export default {
     "@nuxtjs/cloudinary",
     "@nuxtjs/auth-next",
     "@nuxtjs/toast",
-    "@nuxtjs/dayjs"
+    "@nuxtjs/dayjs",
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseURL: process.env.NUXT_ENV_API_URL,
-    credentials: true
+    credentials: true,
   },
 
   dayjs: {
     locales: ["bn"],
     defaultLocale: "bn",
-    plugins: ["relativeTime"]
+    plugins: ["relativeTime"],
   },
 
   colorMode: {
-    classSuffix: ""
+    classSuffix: "",
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
@@ -71,22 +71,22 @@ export default {
     postcss: {
       plugins: {
         tailwindcss: {},
-        autoprefixer: {}
-      }
-    }
+        autoprefixer: {},
+      },
+    },
   },
 
   cloudinary: {
     cloudName: process.env.NUXT_APP_CLOUDINARY_CLOUDNAME,
-    useComponent: true
+    useComponent: true,
   },
 
   toast: {
-    position: "top-center"
+    position: "top-center",
   },
 
   server: {
-    host: process.env.NUXT_ENV_HOST || "localhost"
+    host: process.env.NUXT_ENV_HOST || "localhost",
   },
 
   auth: {
@@ -96,26 +96,25 @@ export default {
         url: process.env.NUXT_ENV_API_URL,
         endpoints: {
           login: {
-            // url: "/api/auth/login"
-            url: "/api/auth/login-spark"
+            url: "/api/auth/login-spark",
           },
           logout: {
             url: "/api/auth/logout",
-            method: "post"
+            method: "post",
           },
           user: {
-            url: "/api/user",
-            propertyName: false
-          }
-        }
-      }
+            url: "/api/profile/me",
+            propertyName: false,
+          },
+        },
+      },
     },
     watchLoggedIn: true,
     redirect: {
       login: "/auth/login", // User will be redirected to this path if login is required.
       logout: "/", // User will be redirected to this path if after logout, current route is protected.
       callback: "/auth/login", // User will be redirected to this path by the identity provider after login.
-      home: "/" // User will be redirected to this path after login. (rewriteRedirects will rewrite this path)
-    }
-  }
+      home: "/", // User will be redirected to this path after login. (rewriteRedirects will rewrite this path)
+    },
+  },
 };

@@ -102,9 +102,9 @@ export default {
         designation: this.$auth.user.designation || "",
         website_url: this.$auth.user.website_url || "",
         location: this.$auth.user.location || "",
-        bio: this.$auth.user.bio || ""
+        bio: this.$auth.user.bio || "",
       },
-      loading: false
+      loading: false,
     };
   },
   methods: {
@@ -112,10 +112,9 @@ export default {
       this.loading = true;
       try {
         await this.$axios.$post(
-          "/api/auth/update-profile-basic-settings",
-          this.form
+          "/api/profile/update",
+          this.cleanupFormObject(this.form)
         );
-
         await this.$auth.fetchUser();
         this.$toast.success("Profile updated successfully");
         this.loading = false;
@@ -125,7 +124,7 @@ export default {
         this.error = e.response.data.message;
         this.loading = false;
       }
-    }
-  }
+    },
+  },
 };
 </script>

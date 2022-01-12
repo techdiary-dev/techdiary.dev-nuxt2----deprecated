@@ -16,7 +16,7 @@
           <nuxt-link
             :to="{
               name: 'username',
-              params: { username: $auth.user.username }
+              params: { username: $auth.user.username },
             }"
             class="px-3 py-1 text-white rounded bg-slate-800 focus:shadow-outline"
           >
@@ -36,23 +36,23 @@ export default {
   data() {
     return {
       form: {
-        profile_readme: this.$auth.user?.profile_readme || ""
+        profile_readme: this.$auth.user?.profile_readme || "",
       },
-      loading: false
+      loading: false,
     };
   },
   methods: {
     async save() {
       this.loading = true;
       try {
-        await this.$axios.$post("/api/auth/update-profile", this.form);
+        await this.$axios.$post("/api/profile/update", this.form);
         this.$toast.success("Updated successfully");
         this.loading = false;
         this.errors = {};
       } catch (e) {
         this.loading = false;
       }
-    }
-  }
+    },
+  },
 };
 </script>

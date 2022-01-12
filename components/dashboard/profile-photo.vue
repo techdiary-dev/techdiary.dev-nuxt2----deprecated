@@ -18,7 +18,7 @@
         >
           <div
             :class="{
-              'opacity-100': loading
+              'opacity-100': loading,
             }"
             class="absolute top-0 left-0 flex items-center justify-center w-full h-full transition-all duration-300 bg-gray-700 bg-opacity-50 opacity-0 group-hover:opacity-100"
           >
@@ -88,13 +88,13 @@ export default {
       profilePhoto: this.$auth.user.profilePhoto || null,
       loading: false,
       dirty: false,
-      previous: null
+      previous: null,
     };
   },
   watch: {
     profilePhoto() {
       this.dirty = true;
-    }
+    },
   },
   methods: {
     removeThumbnail() {
@@ -114,7 +114,7 @@ export default {
 
       this.profilePhoto = this.$cloudinary.image.url(public_id, {
         crop: "scale",
-        width: 300
+        width: 300,
       });
       this.loading = false;
     },
@@ -123,14 +123,14 @@ export default {
     },
 
     async save() {
-      await this.$axios.$post("/api/auth/update-profile", {
-        profilePhoto: this.profilePhoto
+      await this.$axios.$post("/api/profile/update", {
+        profilePhoto: this.profilePhoto,
       });
       await this.$auth.fetchUser();
 
       this.$toast.success("Updated successfully");
       this.dirty = false;
-    }
-  }
+    },
+  },
 };
 </script>

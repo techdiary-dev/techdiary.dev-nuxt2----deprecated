@@ -67,7 +67,7 @@ export default {
       try {
         await formSchema.validate(this.form, { abortEarly: false });
 
-        await this.$axios.$post("/api/auth/update-profile", {
+        await this.$axios.$post("/api/profile/update", {
           social_links: this.form
         });
         this.$toast.success("Updated successfully");

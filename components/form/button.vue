@@ -1,5 +1,5 @@
 <template>
-  <button class="td-button" v-bind="$attrs">
+  <button v-bind="$attrs" :disabled="!!loading">
     <template v-if="loading">
       <svg
         class="animated-spin"
@@ -32,18 +32,20 @@ export default {
   props: {
     loading: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 };
 </script>
 
 <style scoped>
-.td-button {
+button {
   @apply px-3 py-1;
   @apply bg-slate-800 text-white;
   @apply flex items-center rounded;
   @apply focus:outline-none;
+
+  @apply disabled:bg-opacity-40 disabled:cursor-not-allowed;
 }
 .animated-spin {
   @apply w-5 h-5 mr-2 animate-spin;

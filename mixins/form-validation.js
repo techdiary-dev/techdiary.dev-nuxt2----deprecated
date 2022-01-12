@@ -1,7 +1,7 @@
 export default {
   data() {
     return {
-      errors: {}
+      errors: {},
     };
   },
   methods: {
@@ -40,6 +40,15 @@ export default {
         err += " " + errors[key].join(". ");
       }
       return err;
-    }
-  }
+    },
+    cleanupFormObject(formObject) {
+      const cleanedFormObject = {};
+      Object.keys(formObject).forEach((key) => {
+        if (formObject[key] !== "") {
+          cleanedFormObject[key] = formObject[key];
+        }
+      });
+      return cleanedFormObject;
+    },
+  },
 };
