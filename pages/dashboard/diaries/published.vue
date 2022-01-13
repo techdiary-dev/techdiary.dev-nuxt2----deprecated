@@ -96,6 +96,9 @@
 import swal from "sweetalert";
 export default {
     layout: "dashboard",
+    head: {
+        title: "প্রকাশিত ডায়েরি",
+    },
     data: () => ({
         articles: [],
         modalOpen: false,

@@ -96,6 +96,9 @@
 <script>
 export default {
     layout: "dashboard",
+    head: {
+        title: "সকল ডায়েরি",
+    },
     data: () => ({
         articles: [],
         modalOpen: false,
