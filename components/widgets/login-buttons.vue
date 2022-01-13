@@ -106,7 +106,7 @@ export default {
   data() {
     return {
       loadingGithub: false,
-      loadingGoogle: false
+      loadingGoogle: false,
     };
   },
   methods: {
@@ -118,9 +118,9 @@ export default {
       if (service == "github") {
         this.loadingGithub = true;
       }
-      window.location.href = `${process.env.NUXT_ENV_API_URL}/api/auth/oauth/${service}`;
-    }
-  }
+      window.location.href = `${process.env.NUXT_ENV_API_URL}/api/oauth/${service}`;
+    },
+  },
 };
 </script>
 

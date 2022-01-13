@@ -32,7 +32,7 @@ export default {
     const query = new URLSearchParams(this.$route.query).toString();
 
     try {
-      await this.$axios.$post(`api/auth/oauth/signed-login?${query}`);
+      await this.$axios.$post(`/api/auth/signed-login?${query}`);
 
       await this.$auth.loginWith("laravelSanctum", {
         data: {},

@@ -18,28 +18,11 @@
             />
           </svg>
         </button>
-        <nuxt-link to="/" class="inline-block ">
+        <nuxt-link to="/" class="inline-block">
           <Logos-Text class="navbar__logo" />
         </nuxt-link>
       </div>
       <Navbar-Links />
-    </div>
-    <div
-      class="flex items-center justify-center p-2 bg-yellow-300 border-red-500 "
-    >
-      <p class="text-gray-600 ">
-        আমরা নতুন UI এবং ফিচার নিয়ে কাজ করছি, তাই কিছু ফিচার বর্তমানে কাজ নাও
-        করতে পারে। এই অসুবিধার জন্য অত্যন্ত দুঃখিত। কোন বাগ পেলে আমাদের জানিয়ে
-        দিতে পারেন
-        <a
-          target="_blank"
-          class="font-bold text-gray-800"
-          href="https://github.com/techdiary-dev/feedback/issues/new/choose"
-        >
-          ইস্যু তৈরি
-        </a>
-        করে জানি দিন।
-      </p>
     </div>
   </div>
 </template>
@@ -77,8 +60,8 @@ import { mapMutations } from "vuex";
 export default {
   methods: {
     ...mapMutations({
-      triggerSidebar: "ui/SET_SHOW_LEFTSIDEBAR"
-    })
-  }
+      triggerSidebar: "ui/SET_SHOW_LEFTSIDEBAR",
+    }),
+  },
 };
 </script>

@@ -5,8 +5,7 @@
 @layer base {
   body {
     @apply font-KohinoorBangla;
-    // text-gray-700 dark:text-gray-300
-    @apply text-gray-700 dark:text-slate-300;
+    @apply text-dark;
     @apply bg-white dark:bg-slate-900;
   }
   a {
@@ -52,13 +51,13 @@
   // }
 
   .text-dark {
-    @apply text-gray-900 dark:text-gray-200;
+    @apply text-slate-900 dark:text-slate-200;
   }
   .text-dark-secondary {
-    @apply text-gray-600 dark:text-gray-300;
+    @apply text-slate-600 dark:text-slate-300;
   }
   .text-dark-tertiary {
-    @apply text-gray-400 dark:text-gray-600;
+    @apply text-slate-400 dark:text-gray-600;
   }
 
   .bg-dark {
@@ -71,7 +70,7 @@
     @apply bg-gray-100 dark:bg-gray-600;
   }
 
-  .\? {
+  .debug {
     position: relative;
     &::before {
       content: "";

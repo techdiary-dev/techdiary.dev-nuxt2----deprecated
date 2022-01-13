@@ -4,7 +4,7 @@
       সর্বশেষ নিবন্ধিত ব্যবহারকারী
     </h3>
 
-    <div class="flex flex-col gap-5 ">
+    <div class="flex flex-col gap-5">
       <!--  -->
       <div class="flex items-center" v-for="user in users" :key="user.id">
         <nuxt-link
@@ -22,7 +22,7 @@
         <div class="ml-2">
           <h3 class="text-base text-dark">
             <nuxt-link
-              class="text-gray-800 dark:text-gray-300 "
+              class="text-gray-800 dark:text-gray-300"
               :to="{ name: 'username', params: { username: user.username } }"
             >
               {{ user.name }}
@@ -41,12 +41,12 @@
 export default {
   data() {
     return {
-      users: []
+      users: [],
     };
   },
   async fetch() {
-    const { data } = await this.$axios.$get("api/users");
+    const { data } = await this.$axios.$get("api/profile/list?limit=6");
     this.users = data;
-  }
+  },
 };
 </script>

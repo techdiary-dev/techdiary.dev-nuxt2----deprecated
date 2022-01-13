@@ -1,8 +1,6 @@
 <template>
   <div>
-    <h3 class="text-sm font-semibold text-gray-600">
-      লগইন করুন
-    </h3>
+    <h3 class="text-sm font-semibold text-gray-600">লগইন করুন</h3>
 
     <div class="flex flex-col gap-3 mt-3">
       <label>
@@ -21,7 +19,7 @@
         />
       </label>
 
-      <label class="flex items-center gap-3 ">
+      <label class="flex items-center gap-3">
         <input type="checkbox" />
         <p>Remember Me</p>
       </label>
@@ -32,9 +30,3 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  layout: "left-sidebar"
-};
-</script>

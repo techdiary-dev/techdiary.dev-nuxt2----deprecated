@@ -9,6 +9,9 @@
 
 <script>
 export default {
-  layout: "dashboard"
+  layout: "dashboard",
+  head: {
+    title: "সেটিং",
+  },
 };
 </script>
