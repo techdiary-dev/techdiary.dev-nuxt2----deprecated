@@ -99,7 +99,9 @@
                 <!-- User infos end -->
             </div>
         </aside>
-        <main class="border rounded md:col-span-9 col-span-full">
+        <main
+            class="border rounded dark:border-slate-700 md:col-span-9 col-span-full"
+        >
             <!-- Navigation start -->
             <nav class="navigation">
                 <a href="#" class="navigation__item navigation__item--active">
@@ -163,7 +165,7 @@
             </nav>
             <!-- Navigation end -->
             <div
-                class="p-4 prose lg:prose-lg max-w-none prose-img:inline-block prose-p:my-0"
+                class="p-4 prose lg:prose-lg max-w-none prose-img:inline-block prose-p:my-0 dark:prose-invert"
                 v-html="user.profile_readme_html"
             ></div>
         </main>
@@ -200,7 +202,7 @@ export default {
 
 <style lang="scss" scoped>
 .navigation {
-    @apply flex mb-2 space-x-4 border-b;
+    @apply flex mb-2 space-x-4 border-b dark:border-slate-700;
 
     &__item {
         @apply text-slate-600 dark:text-slate-100;
