@@ -100,7 +100,7 @@
             </div>
         </aside>
         <main
-            class="border rounded dark:border-slate-700 md:col-span-9 col-span-full"
+            class="border rounded app-border-color md:col-span-9 col-span-full"
         >
             <!-- Navigation start -->
             <nav class="navigation">

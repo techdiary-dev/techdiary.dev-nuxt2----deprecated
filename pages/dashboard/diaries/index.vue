@@ -139,7 +139,7 @@ export default {
                 if (confirmed) {
                     await this.$axios.$delete(`/api/articles/uuid/${uuid}`);
                     this.articles.splice(index, 1);
-                    //   this.$toast.success("ডায়েরি মুছে ফেলা হয়েছে।");
+                    this.$toast.success("ডায়েরি মুছে ফেলা হয়েছে।");
                 }
             });
         },
