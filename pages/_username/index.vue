@@ -166,8 +166,22 @@
             <!-- Navigation end -->
             <div
                 class="p-4 prose lg:prose-lg max-w-none prose-img:inline-block prose-p:my-0 dark:prose-invert"
+                v-if="user.profile_readme_html"
                 v-html="user.profile_readme_html"
             ></div>
+            <div v-else>
+                <img
+                    class="mx-auto lg:w-6/12"
+                    src="~/static/images/robots-drones-artificial-intelligence-1.png"
+                    alt=""
+                />
+
+                <div class="my-4">
+                    <h2 class="text-xl font-bold text-center">
+                        {{ user.name }} এর টেক প্রোফাইল এখনো খালি
+                    </h2>
+                </div>
+            </div>
         </main>
     </div>
 </template>

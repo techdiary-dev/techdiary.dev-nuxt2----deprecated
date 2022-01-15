@@ -91,6 +91,7 @@
                 class="flex items-center justify-between px-4 py-2 border rounded app-border-color hover:bg-slate-50 hover:dark:bg-slate-800"
                 v-for="(token, index) in tokens"
                 :key="token.id"
+                :data-token-id="token.id"
             >
                 <div class="flex items-center space-x-2">
                     <svg
@@ -229,6 +230,7 @@ export default {
         },
         async createToken() {
             this.loading = true;
+            this.errors = {};
             try {
                 const { token } = await this.$axios.$post("/api/tokens", {
                     name: this.newTokenName,
