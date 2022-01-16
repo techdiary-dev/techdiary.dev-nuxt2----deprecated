@@ -36,3 +36,9 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.cld-image {
+    width: 100%;
+}
+</style>
