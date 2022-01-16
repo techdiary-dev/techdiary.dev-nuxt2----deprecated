@@ -8,7 +8,8 @@
             <div class="-ml-20 -mr-20" v-if="article.thumbnail">
                 <app-image
                     :src="article.thumbnail"
-                    class="w-full overflow-hidden rounded-md"
+                    class="thumbnail"
+                    :alt="article.title"
                 />
             </div>
             <!-- Thumbnail end -->
@@ -229,6 +230,13 @@ export default {
         &--active {
             @apply text-primary bg-gray-200 dark:bg-gray-700;
         }
+    }
+}
+
+.thumbnail {
+    @apply rounded-md overflow-hidden;
+    img {
+        @apply w-full;
     }
 }
 </style>
