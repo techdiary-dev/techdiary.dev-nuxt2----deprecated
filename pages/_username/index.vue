@@ -175,7 +175,7 @@
                 </nav>
                 <!-- Navigation end -->
                 <div
-                    class="p-4 prose lg:prose-lg max-w-none prose-img:inline-block prose-p:my-0 dark:prose-invert"
+                    class="p-4 content-typography"
                     v-if="user.profile_readme_html"
                     v-html="user.profile_readme_html"
                 ></div>
@@ -198,7 +198,7 @@
 </template>
 
 <script>
-// import hljs from "highlight.js";
+import hljs from "highlight.js";
 export default {
     head() {
         return {
@@ -206,8 +206,7 @@ export default {
         };
     },
     updated() {
-        // hljs.highlightAll();
-        // console.log("updated");
+        hljs.highlightAll();
     },
     data() {
         return {

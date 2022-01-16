@@ -6,7 +6,10 @@
         <div v-else class="relative max-w-3xl px-4 mx-auto sm:px-6 lg:px-8">
             <!-- Thumbnail start -->
             <div class="-ml-20 -mr-20" v-if="article.thumbnail">
-                <app-image :src="article.thumbnail" />
+                <app-image
+                    :src="article.thumbnail"
+                    class="w-full overflow-hidden rounded-md"
+                />
             </div>
             <!-- Thumbnail end -->
 
@@ -173,7 +176,6 @@ export default {
     },
     updated() {
         hljs.highlightAll();
-        console.log("updated");
     },
     mixins: [votes, bookmark],
     async fetch() {
