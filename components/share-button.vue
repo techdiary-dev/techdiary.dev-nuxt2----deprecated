@@ -54,7 +54,7 @@
                         />
                     </svg>
 
-                    <p class="share_dropdown__label">Twitter</p>
+                    <p class="share_dropdown__label">টুইটার</p>
                 </button>
 
                 <button
@@ -76,7 +76,7 @@
                         />
                     </svg>
 
-                    <p class="share_dropdown__label">Copy Link</p>
+                    <p class="share_dropdown__label">লিংক কপি করুন</p>
                 </button>
             </div>
         </transition>
