@@ -3,7 +3,7 @@ export default {
     head: {
         titleTemplate: "%s | টেকডায়েরি",
         htmlAttrs: {
-            lang: "en",
+            lang: "bn",
         },
         meta: [
             { charset: "utf-8" },
@@ -48,12 +48,27 @@ export default {
         "@nuxtjs/auth-next",
         "@nuxtjs/toast",
         "@nuxtjs/dayjs",
+        "nuxt-seo-meta",
     ],
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {
         baseURL: process.env.NUXT_ENV_API_URL,
         credentials: true,
+    },
+
+    seoMeta: {
+        title: "TechDiary",
+        siteName: "TechDiary",
+        description:
+            "Thinking, Problem, Solution - Bangla programming network - TechDiary",
+        defaultDescription:
+            "Thinking, Problem, Solution - Bangla programming network - TechDiary",
+        defaultUrl: process.env.NUXT_ENV_BASE_URL,
+        keywords: "techdiary, TechDiary",
+        defaultImage:
+            "https://res.cloudinary.com/techdiary-dev/image/upload/f_auto,q_auto/v1642352920/static-assets/mbp4ew9l0deabdpwts45.jpg",
+        locale: "bn",
     },
 
     dayjs: {

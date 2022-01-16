@@ -145,26 +145,47 @@ import votes from "~/mixins/votes";
 import hljs from "highlight.js";
 
 export default {
-    head() {
+    head({ $seoMeta }) {
         return {
             title: this.article?.title || "Loading...",
 
-            meta: [
+            meta: $seoMeta({
+                title: this.article.seo?.seo_title
+                    ? this.article.seo?.seo_title
+                    : this.article?.title,
+                description: this.article?.seo?.seo_description
+                    ? this.article?.seo?.seo_description
+                    : this.article.excerpt,
+                image: this.article.seo?.og_image
+                    ? this.article.seo?.og_image
+                    : this.article?.thumbnail,
+            }),
+
+            link: [
                 {
-                    name: "description",
-                    content: this.article?.seo?.seo_description || "",
-                },
-                {
-                    property: "og:title",
-                    content:
-                        this.article?.seo?.seo_title || this.article?.title,
-                },
-                {
-                    property: "og:image",
-                    content:
-                        this.article?.seo?.og_image || this.article?.thumbnail,
+                    rel: "canonical",
+                    href: this.article.seo?.canonical_url
+                        ? this.article.seo?.canonical_url
+                        : this.article.url,
                 },
             ],
+
+            // meta: [
+            //     {
+            //         name: "description",
+            //         content: this.article?.seo?.seo_description || "",
+            //     },
+            //     {
+            //         property: "og:title",
+            //         content:
+            //             this.article?.seo?.seo_title || this.article?.title,
+            //     },
+            //     {
+            //         property: "og:image",
+            //         content:
+            //             this.article?.seo?.og_image || this.article?.thumbnail,
+            //     },
+            // ],
         };
     },
     data() {
