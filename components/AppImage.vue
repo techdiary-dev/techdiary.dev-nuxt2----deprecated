@@ -8,6 +8,7 @@
                     quality="auto"
                     loading="lazy"
                     v-bind="$attrs"
+                    class="w-full"
                 >
                     <cld-placeholder type="vectorize" />
                 </cld-image>
