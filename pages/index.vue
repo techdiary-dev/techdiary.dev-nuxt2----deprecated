@@ -1,5 +1,27 @@
 <template>
-    <div>
+    <layout-three-columns>
+        <template #right-sidebar-top>
+            <div class="relative mb-4">
+                <p
+                    class="absolute top-0 left-0 text-xs font-semibold uppercase text-slate-800"
+                >
+                    Sponsored
+                </p>
+                <a
+                    href="https://go.techdiary.dev/themecamp"
+                    target="_blank"
+                    rel="nofollow"
+                    class="overflow-hidden rounded-md"
+                >
+                    <img
+                        class="aspect-square"
+                        src="https://res.cloudinary.com/techdiary-dev/image/upload/f_auto,q_auto/v1642310040/static-assets/ooca9kpqlq9usmwazgaf.jpg"
+                        alt="WordPress ThemeCamp"
+                    />
+                </a>
+            </div>
+        </template>
+
         <widgets-fake-editor />
         <div class="flex flex-col gap-8 mt-4">
             <ArticleCard
@@ -12,12 +34,12 @@
             v-observe-visibility="loadMore"
             v-if="this.pageMeta.current_page != this.pageMeta.last_page"
         />
-    </div>
+    </layout-three-columns>
 </template>
 
 <script>
 export default {
-    layout: "three-columns",
+    layout: "blank",
     head() {
         return {
             title: "নীড়",
