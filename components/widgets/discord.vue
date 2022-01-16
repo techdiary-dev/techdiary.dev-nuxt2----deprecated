@@ -1,6 +1,6 @@
 <template>
     <div
-        class="p-3 mb-5 overflow-hidden border border-gray-200 rounded-lg dark:border-gray-600"
+        class="p-3 overflow-hidden border border-gray-200 rounded-lg dark:border-gray-600"
     >
         <a
             href="https://go.techdiary.dev/discord"
