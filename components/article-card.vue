@@ -17,7 +17,9 @@
                     />
                     <div>
                         <p class="font-mono text-dark-secondary">
-                            {{ article.user.username }}
+                            <nuxt-link :to="`/${article.user.username}`">
+                                {{ article.user.username }}
+                            </nuxt-link>
                         </p>
                         <p class="text-sm text-dark-secondary">
                             {{
