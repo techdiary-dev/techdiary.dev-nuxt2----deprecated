@@ -9,11 +9,10 @@
                 class=""
             >
                 <div class="flex items-center space-x-2">
-                    <img
+                    <app-image
                         :src="article.user.profilePhoto"
-                        alt="Imam Uddin"
-                        loading="lazy"
-                        class="w-10 h-10 rounded-full"
+                        :alt="article.user.name"
+                        class="w-10 h-10 overflow-hidden rounded-full"
                     />
                     <div>
                         <p class="font-mono text-dark-secondary">
@@ -63,10 +62,10 @@
         </nuxt-link>
         <div class="article-card__thumbnail" v-if="article.thumbnail">
             <nuxt-link :to="articleUrl">
-                <img
+                <app-image
                     :src="article.thumbnail"
                     :alt="article.title"
-                    class="rounded-md"
+                    class="overflow-hidden rounded-md"
                 />
             </nuxt-link>
         </div>

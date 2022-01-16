@@ -4,17 +4,17 @@
             <client-only>
                 <cld-image
                     :public-id="getPublicId"
+                    :alt="alt"
                     fetchFormat="auto"
                     quality="auto"
                     loading="lazy"
-                    v-bind="$attrs"
                     class="w-full"
                 >
                     <cld-placeholder type="vectorize" />
                 </cld-image>
             </client-only>
         </div>
-        <img v-else :src="src" class="w-full" />
+        <img v-else :src="src" :alt="alt" class="w-full" />
     </div>
 </template>
 
@@ -23,6 +23,10 @@ export default {
     props: {
         src: {
             required: true,
+            type: String,
+        },
+        alt: {
+            required: false,
             type: String,
         },
     },
