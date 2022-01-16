@@ -29,14 +29,17 @@
 
             <!-- users and actions start -->
             <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-3">
+                <nuxt-link
+                    :to="`/${article.user.username}`"
+                    class="flex items-center space-x-3 text-dark"
+                >
                     <img
                         class="w-10 h-10 rounded-full"
                         :src="article.user.profilePhoto"
                         :alt="article.user.username"
                     />
                     <p class="text-xl">{{ article.user.name }}</p>
-                </div>
+                </nuxt-link>
                 <div class="flex items-center space-x-2">
                     <nuxt-link
                         v-if="
