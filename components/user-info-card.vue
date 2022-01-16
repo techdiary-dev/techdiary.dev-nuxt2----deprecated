@@ -8,8 +8,28 @@
             />
 
             <div class="my-2">
-                <h3 class="text-lg font-semibold">{{ user.name }}</h3>
-                <p>@{{ user.username }}</p>
+                <h3 class="text-lg font-semibold">
+                    <nuxt-link
+                        class="text-dark"
+                        :to="{
+                            name: 'username',
+                            params: { username: user.username },
+                        }"
+                    >
+                        {{ user.name }}
+                    </nuxt-link>
+                </h3>
+                <p>
+                    <nuxt-link
+                        class="text-dark"
+                        :to="{
+                            name: 'username',
+                            params: { username: user.username },
+                        }"
+                    >
+                        @{{ user.username }}
+                    </nuxt-link>
+                </p>
             </div>
         </div>
 

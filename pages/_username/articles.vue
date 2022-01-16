@@ -6,7 +6,7 @@
             </div>
         </template>
 
-        <main class="flex flex-col gap-8 mt-4">
+        <main class="flex flex-col gap-8">
             <div class="mb-10 lg:hidden" :data-user-id="user.id">
                 <user-info-card :user="user" />
             </div>

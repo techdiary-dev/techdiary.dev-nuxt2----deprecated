@@ -11,7 +11,6 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
-    "@nuxt/content": "^1.15.1",
     "@nuxtjs/auth-next": "^5.0.0-1624817847.21691f1",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/cloudinary": "^1.0.3",
@@ -21,6 +20,7 @@
     "codemirror": "^5.62.3",
     "core-js": "^3.15.1",
     "dayjs": "^1.10.7",
+    "highlight.js": "^11.4.0",
     "lodash.debounce": "^4.0.8",
     "nuxt": "^2.15.8",
     "sweetalert": "^2.1.2",

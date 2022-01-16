@@ -22,7 +22,7 @@
                         <p class="text-sm text-dark-secondary">
                             {{
                                 $dayjs(article.created_at).format(
-                                    'DD MMMM YYYY'
+                                    "DD MMMM YYYY"
                                 )
                             }}
                         </p>
@@ -74,37 +74,28 @@
                     </svg>
 
                     <transition name="fade">
-                        <div v-if="dropDownOpen" class="user-action-dropdown">
-                            <nuxt-link
-                                to="/"
-                                class="user-action-dropdown__item"
-                            >
+                        <div v-if="dropDownOpen" class="share_dropdown">
+                            <button class="share_dropdown__item">
                                 <svg
-                                    class="fill-current user-action-dropdown__icon"
                                     xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
+                                    class="fill-current share_dropdown__icon"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
                                 >
                                     <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+                                        d="M7 9a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H9a2 2 0 01-2-2V9z"
+                                    />
+                                    <path
+                                        d="M5 3a2 2 0 00-2 2v6a2 2 0 002 2V5h8a2 2 0 00-2-2H5z"
                                     />
                                 </svg>
 
-                                <p class="user-action-dropdown__label">
-                                    Copy Link
-                                </p>
-                            </nuxt-link>
+                                <p class="share_dropdown__label">Copy Link</p>
+                            </button>
 
-                            <nuxt-link
-                                to="/"
-                                class="user-action-dropdown__item"
-                            >
+                            <button class="share_dropdown__item">
                                 <svg
-                                    class="fill-current user-action-dropdown__icon"
+                                    class="fill-current share_dropdown__icon"
                                     role="img"
                                     viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -115,20 +106,15 @@
                                     />
                                 </svg>
 
-                                <p class="user-action-dropdown__label">
-                                    Facebook
-                                </p>
-                            </nuxt-link>
+                                <p class="share_dropdown__label">Facebook</p>
+                            </button>
 
-                            <nuxt-link
-                                to="/"
-                                class="user-action-dropdown__item"
-                            >
+                            <button class="share_dropdown__item">
                                 <svg
                                     role="img"
                                     viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="fill-current user-action-dropdown__icon"
+                                    class="fill-current share_dropdown__icon"
                                 >
                                     <title>Twitter</title>
                                     <path
@@ -136,10 +122,8 @@
                                     />
                                 </svg>
 
-                                <p class="user-action-dropdown__label">
-                                    Twitter
-                                </p>
-                            </nuxt-link>
+                                <p class="share_dropdown__label">Twitter</p>
+                            </button>
                         </div>
                     </transition>
                 </button>
@@ -248,11 +232,11 @@
 
 <script>
 // import reactions from "~/mixins/reactions";
-import votes from '~/mixins/votes'
-import bookmark from '~/mixins/bookmark'
+import votes from "~/mixins/votes";
+import bookmark from "~/mixins/bookmark";
 
 export default {
-    props: ['article'],
+    props: ["article"],
     mixins: [votes, bookmark],
     data() {
         return {
@@ -264,29 +248,29 @@ export default {
             bookmarked_users: [],
             isBookmarked: false,
             dropDownOpen: false,
-        }
+        };
     },
     mounted() {
-        this.bookmarked_users = this.article.bookmarked_users
+        this.bookmarked_users = this.article.bookmarked_users;
 
         if (this.$auth.loggedIn) {
             this.isBookmarked = this.bookmarked_users?.includes(
                 this.$auth.user.id
-            )
+            );
         }
     },
     computed: {
         articleUrl() {
             return {
-                name: 'username-slug',
+                name: "username-slug",
                 params: {
                     username: this.article.user.username,
                     slug: this.article.slug,
                 },
-            }
+            };
         },
     },
-}
+};
 </script>
 
 <style scoped lang="scss">
@@ -336,7 +320,7 @@ export default {
     }
 }
 
-.user-action-dropdown {
+.share_dropdown {
     @apply space-y-3;
     @apply bg-white dark:bg-gray-700;
     @apply absolute right-0 w-48 p-4 mt-1 rounded-bl rounded-br shadow-lg top-full;
