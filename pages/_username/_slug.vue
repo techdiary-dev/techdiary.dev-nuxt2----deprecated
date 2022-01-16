@@ -71,6 +71,8 @@
                         </svg>
                     </button>
 
+                    <share-button :url="article.url" />
+
                     <!-- Actions start -->
                     <div class="vote">
                         <button
