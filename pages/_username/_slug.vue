@@ -9,6 +9,7 @@
                 <app-image
                     :src="article.thumbnail"
                     class="thumbnail"
+                    width="100%"
                     :alt="article.title"
                 />
             </div>
@@ -235,8 +236,5 @@ export default {
 
 .thumbnail {
     @apply rounded-md overflow-hidden;
-    img {
-        @apply w-full;
-    }
 }
 </style>

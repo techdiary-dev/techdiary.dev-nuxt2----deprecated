@@ -9,12 +9,13 @@
                     quality="auto"
                     loading="lazy"
                     class="w-full"
+                    :width="width"
                 >
                     <cld-placeholder type="vectorize" />
                 </cld-image>
             </client-only>
         </div>
-        <img v-else :src="src" :alt="alt" class="w-full" />
+        <img v-else :src="src" :alt="alt" class="w-full" :width="width" />
     </div>
 </template>
 
@@ -26,6 +27,10 @@ export default {
             type: String,
         },
         alt: {
+            required: false,
+            type: String,
+        },
+        width: {
             required: false,
             type: String,
         },
