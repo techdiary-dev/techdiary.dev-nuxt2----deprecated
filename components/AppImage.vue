@@ -1,5 +1,5 @@
 <template>
-    <div class="inline-block" v-bind="$attrs">
+    <div class="inline-block w-full" v-bind="$attrs">
         <div v-if="isCloudinary">
             <client-only>
                 <cld-image

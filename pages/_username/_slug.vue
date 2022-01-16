@@ -8,7 +8,6 @@
             <div class="-ml-20 -mr-20" v-if="article.thumbnail">
                 <app-image
                     :src="article.thumbnail"
-                    class="thumbnail"
                     width="100%"
                     :alt="article.title"
                 />
