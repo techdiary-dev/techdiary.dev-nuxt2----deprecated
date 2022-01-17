@@ -1,12 +1,5 @@
 <template>
     <div>
-        <div class="sr-only">
-            <h1>TechDiary</h1>
-            <h2>
-                Thinking, Problem, Solution - Bangla programming network -
-                TechDiary
-            </h2>
-        </div>
         <Navbar />
 
         <div class="grid grid-cols-12 gap-10 wrapper">

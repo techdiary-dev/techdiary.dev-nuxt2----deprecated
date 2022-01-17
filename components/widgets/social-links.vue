@@ -59,6 +59,28 @@
                 </svg>
                 <span>ডিসকর্ড</span>
             </a>
+            <a
+                href="https://api.techdiary.dev/rss/articles"
+                target="_blank"
+                rel="nofollow"
+                class="flex items-center space-x-2 text-dark-secondary"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5 fill-current"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"
+                    />
+                </svg>
+                <span>RSS</span>
+            </a>
         </div>
     </div>
 </template>

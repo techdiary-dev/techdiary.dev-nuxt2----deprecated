@@ -6,7 +6,6 @@
                     name: 'username',
                     params: { username: article.user.username },
                 }"
-                class=""
             >
                 <div class="flex items-center space-x-2">
                     <app-image
