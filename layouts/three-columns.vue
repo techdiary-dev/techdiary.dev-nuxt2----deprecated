@@ -25,8 +25,8 @@
     @apply grid grid-cols-12;
 
     &__aside {
-        @apply sticky top-0 px-6;
-        @apply self-start top-[50px];
+        // @apply sticky top-0 px-6 top-[50px];
+        @apply self-start;
 
         &--left {
             @apply hidden md:block;

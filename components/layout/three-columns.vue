@@ -4,19 +4,23 @@
 
         <div class="layout wrapper">
             <aside class="layout__aside layout__aside--left">
-                <slot name="left-sidebar-top" />
-                <sidebar-left />
-                <slot name="left-sidebar-bottom" />
+                <div class="overflow-y-auto">
+                    <slot name="left-sidebar-top" />
+                    <sidebar-left />
+                    <slot name="left-sidebar-bottom" />
+                </div>
             </aside>
 
             <main class="layout__main app-border-color">
                 <slot />
             </main>
 
-            <aside class="layout__aside layout__aside--right">
-                <slot name="right-sidebar-top" />
-                <sidebar-right />
-                <slot name="right-sidebar-bottom" />
+            <aside class="overflow-y-auto layout__aside layout__aside--right">
+                <div class="relative min-h-full">
+                    <slot name="right-sidebar-top" />
+                    <sidebar-right />
+                    <slot name="right-sidebar-bottom" />
+                </div>
             </aside>
         </div>
 
@@ -29,8 +33,10 @@
     @apply grid grid-cols-12;
 
     &__aside {
-        @apply sticky top-0 px-6;
-        @apply self-start top-[50px];
+        @apply overflow-y-hidden;
+        @apply sticky top-[50px];
+        @apply self-start;
+        @apply px-6;
 
         &--left {
             @apply hidden md:block;

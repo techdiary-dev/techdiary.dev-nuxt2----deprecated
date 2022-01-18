@@ -1,9 +1,6 @@
 <template>
     <div class="flex flex-col h-screen p-10 text-white bg-slate-900">
         <div class="flex-1">
-            <pre>
-                {{ article }}
-            </pre>
             <h3 class="text-5xl font-semibold leading-relaxed line-clamp-3">
                 কেন একজন প্রোগ্রামার হিসেবে আপনার সি শেখা উচিত?(Reuploaded). কেন
                 একজন প্রোগ্রামার হিসেবে আপনার সি শেখা উচিত?(Reuploaded). কেন
@@ -33,11 +30,10 @@ export default {
         title: "Thumbnail",
     },
     async asyncData({ $axios, $route }) {
-        const { data: article } = await $axios.$get(
-            `/api/articles/uuid/${$route.query.postId}`
-        );
-
-        return { article };
+        // const { data: article } = await $axios.$get(
+        //     `/api/articles/uuid/${$route.query.postId}`
+        // );
+        // return { article };
     },
 };
 </script>
