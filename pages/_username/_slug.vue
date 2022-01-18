@@ -15,6 +15,33 @@
             <!-- Thumbnail end -->
 
             <div class="mx-auto my-10 text-lg max-w-prose">
+                <div
+                    v-if="!article.isPublished"
+                    class="p-4 bg-red-100 border border-red-500 border-dashed rounded-md text-slate-700"
+                >
+                    <div class="flex items-center space-x-2">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-6 h-6"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                                clip-rule="evenodd"
+                            />
+                        </svg>
+                        <p class="font-semibold">দৃষ্টি আকর্ষন</p>
+                    </div>
+
+                    <p>
+                        এই আর্টিক্যাল টি হোম পেইজে দৃশ্যমান নয়। কিন্তু URL টি
+                        পাবলিক, অর্থাৎ আপনি চাইলে URL কপি করে যে কারো সাথে শেয়ার
+                        করতে পারবেন।
+                    </p>
+                </div>
+
                 <h1
                     class="block mt-2 text-3xl font-semibold leading-10 tracking-tight text-center text-gray-900 dark:text-gray-200 sm:text-4xl"
                 >
