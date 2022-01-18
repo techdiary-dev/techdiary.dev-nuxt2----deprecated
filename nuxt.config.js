@@ -56,6 +56,12 @@ export default {
         "@nuxtjs/dayjs",
         "nuxt-seo-meta",
         "@nuxtjs/sentry",
+        [
+            "@netsells/nuxt-hotjar",
+            {
+                id: process.env.NUXT_ENV_HOTJAR_ID,
+            },
+        ],
     ],
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
