@@ -29,6 +29,7 @@
     "vue-multiselect": "^2.1.6",
     "vue-observe-visibility": "^1.0.0",
     "vue-textarea-autosize": "^1.1.1",
+    "vue-tour": "^2.0.0",
     "yup": "^0.32.9"
   },
   "devDependencies": {

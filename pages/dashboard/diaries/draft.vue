@@ -39,7 +39,11 @@
                             }"
                             class="text-xl text-gray-700 dark:text-gray-200 line-clamp-1"
                         >
-                            {{ article.title }}
+                            {{
+                                article.title
+                                    ? article.title
+                                    : "শিরোনামহীন ডায়েরি"
+                            }}
                         </nuxt-link>
 
                         <div class="flex items-center mt-2 space-x-2">

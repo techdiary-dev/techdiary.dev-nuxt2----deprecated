@@ -18,7 +18,11 @@ export default {
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
-    css: ["~/assets/styles/app.scss", "highlight.js/styles/atom-one-dark.css"],
+    css: [
+        "~/assets/styles/app.scss",
+        "highlight.js/styles/atom-one-dark.css",
+        "vue-tour/dist/vue-tour.css",
+    ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
@@ -26,6 +30,7 @@ export default {
         "~/plugins/clickaway",
         "~/plugins/resizeable-input",
         "~/plugins/multi-select",
+        "~/plugins/tour.client",
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
