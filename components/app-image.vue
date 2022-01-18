@@ -1,21 +1,19 @@
 <template>
     <div class="inline-block w-full" v-bind="$attrs">
-        <div v-if="isCloudinary">
-            <client-only>
-                <cld-image
-                    :public-id="getPublicId"
-                    :alt="alt"
-                    fetchFormat="auto"
-                    quality="auto"
-                    loading="lazy"
-                    class="w-full"
-                    :width="width"
-                >
-                    <cld-placeholder type="vectorize" />
-                </cld-image>
-            </client-only>
-        </div>
-        <img v-else :src="src" :alt="alt" class="w-full" :width="width" />
+        <!-- <div v-if="isCloudinary">
+            <cld-image
+                :public-id="getPublicId"
+                :alt="alt"
+                fetchFormat="auto"
+                quality="auto"
+                loading="lazy"
+                class="w-full"
+                :width="width"
+            >
+                <cld-placeholder type="vectorize" />
+            </cld-image>
+        </div> -->
+        <img :src="src" :alt="alt" class="w-full" :width="width" />
     </div>
 </template>
 
