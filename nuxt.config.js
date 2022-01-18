@@ -41,6 +41,7 @@ export default {
         // https://go.nuxtjs.dev/tailwindcss
         "@nuxt/postcss8",
         "@nuxtjs/color-mode",
+        "@nuxtjs/google-analytics",
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
@@ -97,6 +98,10 @@ export default {
                 autoprefixer: {},
             },
         },
+    },
+
+    googleAnalytics: {
+        id: process.env.NUXT_APP_GOOGLE_ANALYTICS_ID,
     },
 
     cloudinary: {
