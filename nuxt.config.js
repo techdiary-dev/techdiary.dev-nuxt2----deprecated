@@ -55,6 +55,7 @@ export default {
         "@nuxtjs/toast",
         "@nuxtjs/dayjs",
         "nuxt-seo-meta",
+        "@nuxtjs/sentry",
     ],
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -111,6 +112,10 @@ export default {
 
     toast: {
         position: "top-center",
+    },
+
+    sentry: {
+        dsn: process.env.NUXT_APP_SENTRY_DSN,
     },
 
     server: {
