@@ -30,6 +30,7 @@
     "vue-input-autowidth": "^1.0.11",
     "vue-multiselect": "^2.1.6",
     "vue-observe-visibility": "^1.0.0",
+    "vue-smooth-dnd": "^0.8.1",
     "vue-textarea-autosize": "^1.1.1",
     "vue-tour": "^2.0.0",
     "yup": "^0.32.9"
