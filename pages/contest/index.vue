@@ -54,7 +54,8 @@
 
             <div class="mt-20">
                 <h2 class="text-4xl font-semibold leading-relaxed">
-                    <span class="text-indigo-600">কনটেস্টের</span> এর নিয়মাবলী
+                    <span class="text-indigo-600">কনটেস্টের</span> এর
+                    নিয়মাবলী<span></span>
                 </h2>
 
                 <div
