@@ -1,29 +1,35 @@
 @font-face {
-  font-family: 'KohinoorBangla';
-  src: url('~/static/fonts/KohinoorBangla-Light.woff') format('woff');
-  font-weight: 300;
+    font-family: "Boshonto";
+    src: url("~/static/fonts/Boshonto.woff") format("woff"),
+        url("~/static/fonts/Boshonto.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'KohinoorBangla';
-  src: url('~/static/fonts/KohinoorBangla-Regular.woff') format('woff');
-  font-weight: 400;
+    font-family: "KohinoorBangla";
+    src: url("~/static/fonts/KohinoorBangla-Light.woff") format("woff");
+    font-weight: 300;
 }
 
 @font-face {
-  font-family: 'KohinoorBangla';
-  src: url('~/static/fonts/KohinoorBangla-Medium.woff') format('woff');
-  font-weight: 500;
+    font-family: "KohinoorBangla";
+    src: url("~/static/fonts/KohinoorBangla-Regular.woff") format("woff");
+    font-weight: 400;
 }
 
 @font-face {
-  font-family: 'KohinoorBangla';
-  src: url('~/static/fonts/KohinoorBangla-Semibold.woff') format('woff');
-  font-weight: 600;
+    font-family: "KohinoorBangla";
+    src: url("~/static/fonts/KohinoorBangla-Medium.woff") format("woff");
+    font-weight: 500;
 }
 
 @font-face {
-  font-family: 'KohinoorBangla';
-  src: url('~/static/fonts/KohinoorBangla-Bold.woff') format('woff');
-  font-weight: 700;
+    font-family: "KohinoorBangla";
+    src: url("~/static/fonts/KohinoorBangla-Semibold.woff") format("woff");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "KohinoorBangla";
+    src: url("~/static/fonts/KohinoorBangla-Bold.woff") format("woff");
+    font-weight: 700;
 }

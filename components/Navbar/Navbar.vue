@@ -36,11 +36,11 @@
 
 <style scoped lang="scss">
 .navbar {
+    @apply bg-white dark:bg-slate-900;
     @apply sticky top-0 left-0 z-30 w-full border-b;
 
     .navbar__inner {
         @apply fill-current;
-        @apply bg-white dark:bg-slate-900;
         @apply h-12;
         @apply flex justify-between items-center;
     }

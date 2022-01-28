@@ -49,7 +49,7 @@ export default {
         // https://go.nuxtjs.dev/axios
         "@nuxtjs/axios",
         // https://go.nuxtjs.dev/content
-        // "@nuxt/content",
+        "@nuxt/content",
         "@nuxtjs/cloudinary",
         "@nuxtjs/auth-next",
         "@nuxtjs/toast",
@@ -155,5 +155,10 @@ export default {
             callback: "/auth/login", // User will be redirected to this path by the identity provider after login.
             home: "/", // User will be redirected to this path after login. (rewriteRedirects will rewrite this path)
         },
+    },
+
+    content: {
+        dir: "_content",
+        fullTextSearchFields: ["title", "description"],
     },
 };
