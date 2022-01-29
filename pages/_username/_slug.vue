@@ -58,6 +58,7 @@
             <!-- users and actions start -->
             <div class="flex items-center justify-between">
                 <nuxt-link
+                    v-if="article.user"
                     :to="`/${article.user.username}`"
                     class="flex items-center space-x-3 text-dark"
                 >
@@ -155,6 +156,7 @@
             <!-- users and actions end-->
 
             <div
+                v-if="article.body"
                 class="mx-auto mt-6 content-typography"
                 v-html="article.body.html"
             ></div>

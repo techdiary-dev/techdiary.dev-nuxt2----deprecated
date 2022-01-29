@@ -48,8 +48,6 @@ export default {
     modules: [
         // https://go.nuxtjs.dev/axios
         "@nuxtjs/axios",
-        // https://go.nuxtjs.dev/content
-        "@nuxt/content",
         "@nuxtjs/cloudinary",
         "@nuxtjs/auth-next",
         "@nuxtjs/toast",
@@ -62,6 +60,7 @@ export default {
                 id: process.env.NUXT_ENV_HOTJAR_ID,
             },
         ],
+        "@nuxt/content",
     ],
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -158,7 +157,6 @@ export default {
     },
 
     content: {
-        dir: "_content",
         fullTextSearchFields: ["title", "description"],
     },
 };
