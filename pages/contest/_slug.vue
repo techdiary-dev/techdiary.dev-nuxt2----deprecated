@@ -28,9 +28,12 @@
                 </div>
 
                 <div
-                    class="col-span-12 p-5 mx-auto prose prose-lg bg-white shadow lg:col-span-9 max-w-none"
+                    class="col-span-12 p-5 mx-auto prose prose-lg shadow lg:col-span-9 max-w-none"
                 >
-                    <nuxt-link to="/" class="flex items-center space-x-3">
+                    <nuxt-link
+                        to="/"
+                        class="flex items-center space-x-3 text-dark"
+                    >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             class="w-6 h-6"
@@ -49,11 +52,11 @@
                     </nuxt-link>
 
                     <div>
-                        <h2 class="inline-block border-b-2">
+                        <h2 class="inline-block border-b-2 text-dark">
                             {{ page.title }}
                         </h2>
                     </div>
-                    <div class="prose prose-lg">
+                    <div class="prose prose-lg dark:prose-invert">
                         <nuxt-content :document="page" />
                     </div>
                 </div>
