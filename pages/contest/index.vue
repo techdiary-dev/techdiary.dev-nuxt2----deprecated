@@ -4,11 +4,11 @@
             <h2
                 class="py-4 mb-3 text-5xl font-extrabold font-boshonto text-gradient bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-500"
             >
-                ডেভ আর্টিকেল কন্টেস্ট
+                ডেভ আর্টিকেল কন্টেস্ট ২
             </h2>
 
             <p class="text-xl font-semibold md:text-2xl text-dark">
-                টানা ২য় বারের মত চলে আসল দেভ আর্টিকেল কন্টেস্ট সিজন ২। এইবারের
+                পরপর ২য় বারের মত চলে আসল ডেভ আর্টিকেল কন্টেস্ট সিজন ২। এইবারের
                 কন্টেস্ট এর টপ ১০ জন লেখক এর জন্য থাকছে
                 <a
                     href="https://www.devshopbd.com/"
@@ -17,7 +17,7 @@
                 >
                     ডেভশপ বিডি
                 </a>
-                থেকে আকর্ষনীয় ১০ টি শার্ট আর টেকডাইরি থেকে আকর্ষনীয় স্টিকার
+               পক্ষ থেকে আকর্ষনীয় ১০ টি ডেভেলপার টি-শার্ট আর টেকডায়েরির পক্ষ থেকে আকর্ষনীয় স্টিকার
                 প্যাক।
             </p>
 
@@ -48,6 +48,14 @@
                                     class="!no-underline text-dark"
                                 >
                                     #techdiary_contest_2
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.facebook.com/hashtag/devshopbd"
+                                    class="!no-underline text-dark"
+                                >
+                                    #devshopbd
                                 </a>
                             </li>
                         </ul>
