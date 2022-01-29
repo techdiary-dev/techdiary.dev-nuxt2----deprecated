@@ -21,6 +21,9 @@
                 প্যাক।
             </p>
 
+            <count-down />
+
+            <!-- box start -->
             <div
                 class="px-5 mx-auto mt-4 prose-xl border-2 border-dashed rounded-md font-body max-w-none"
             >
@@ -51,6 +54,7 @@
                     </div>
                 </div>
             </div>
+            <!-- box end -->
 
             <div class="mt-20">
                 <h2 class="text-4xl font-semibold leading-relaxed">
@@ -59,7 +63,7 @@
                 </h2>
 
                 <div
-                    class="p-5 mx-auto my-10 prose prose-lg bg-white shadow wrapper max-w-none font-body"
+                    class="p-5 mx-auto my-10 prose prose-lg shadow dark:prose-invert wrapper max-w-none font-body"
                 >
                     <nuxt-content :document="rules" />
                 </div>
@@ -70,6 +74,9 @@
 
 <script>
 export default {
+    head: {
+        title: "ডেভ আর্টিকেল কন্টেস্ট",
+    },
     async asyncData({ $content }) {
         const rules = await $content("_contest", "welcome").fetch();
         return { rules };
