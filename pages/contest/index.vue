@@ -21,6 +21,9 @@
                 প্যাক।
             </p>
 
+            <count-down />
+
+            <!-- box start -->
             <div
                 class="px-5 mx-auto mt-4 prose-xl border-2 border-dashed rounded-md font-body max-w-none"
             >
@@ -51,6 +54,7 @@
                     </div>
                 </div>
             </div>
+            <!-- box end -->
 
             <div class="mt-20">
                 <h2 class="text-4xl font-semibold leading-relaxed">
