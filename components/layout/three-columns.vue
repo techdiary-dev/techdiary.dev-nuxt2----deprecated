@@ -1,7 +1,7 @@
 <template>
     <div>
+        <contest-banner />
         <Navbar />
-
         <div class="layout wrapper">
             <aside class="layout__aside layout__aside--left">
                 <div class="layout__aside__inner">

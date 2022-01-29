@@ -45,7 +45,7 @@ export default {
             minute: null,
             second: null,
             day: null,
-            countDate: new Date("Feb 30, 2022 00:00:00").getTime(),
+            countDate: new Date("Feb 31, 2022 00:00:00").getTime(),
         };
     },
     mounted() {
