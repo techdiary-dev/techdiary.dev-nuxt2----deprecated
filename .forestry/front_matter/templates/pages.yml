@@ -2,3 +2,5 @@
 label: Pages
 hide_body: false
 fields: []
+pages:
+- _content/test.md
