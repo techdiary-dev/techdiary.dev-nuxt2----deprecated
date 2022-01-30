@@ -14,5 +14,3 @@ fields:
     required: false
   label: Page slug
   description: A unique slug for the page
-pages:
-- _content/test.md
