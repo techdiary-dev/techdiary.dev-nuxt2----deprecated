@@ -19,6 +19,7 @@
     "@nuxtjs/dayjs": "^1.4.1",
     "@nuxtjs/sentry": "^5.1.6",
     "@nuxtjs/toast": "^3.3.1",
+    "algoliasearch": "^4.12.1",
     "bnnum": "^1.0.6",
     "codemirror": "^5.62.3",
     "core-js": "^3.15.1",
