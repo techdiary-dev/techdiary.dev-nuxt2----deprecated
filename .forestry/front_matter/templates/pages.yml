@@ -19,4 +19,5 @@ fields:
   config:
     maxSize: 64
   label: Thumbnail
-  description: Page thumbnail image
+pages:
+- content/_contest/প্রাইস-সমূহ.md

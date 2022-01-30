@@ -1,8 +1,9 @@
 ---
 title: Rules of Contest
 slug: rules
----
+thumbnail: https://res.cloudinary.com/techdiary-dev/image/upload/v1643557917/static-pages-assets/graphland.dev_gmail.com_bgg5zr.png
 
+---
 > লেখার বিষয়সমূহ আপনি প্রযুক্তি, প্রোগ্রামিং, ডেভলপমেন্ট এবং সফটওয়্যার ইঞ্জিনিয়ারিং অথবা প্রযুক্তি কল্পকাহিনি (Sci-fi) নিয়ে লিখতে পারবেন।
 
 ### কনটেস্টে আর্টিকেল সাবমিট করার আগে যা মনে রাখতে হবে :-
