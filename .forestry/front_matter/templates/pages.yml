@@ -1,6 +1,18 @@
 ---
 label: Pages
 hide_body: false
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+  description: Page title
+- name: slug
+  type: text
+  config:
+    required: false
+  label: Page slug
+  description: A unique slug for the page
 pages:
 - _content/test.md
