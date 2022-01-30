@@ -37,7 +37,7 @@
                 </count-down-wrapper>
                 <nuxt-link
                     to="/contest"
-                    class="inline-block p-1 px-5 mt-2 bg-orange-400 text-dark"
+                    class="inline-block p-1 px-5 mt-2 bg-orange-400 text-slate-800"
                 >
                     বিস্তারিত
                 </nuxt-link>

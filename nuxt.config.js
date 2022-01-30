@@ -157,6 +157,13 @@ export default {
     },
 
     content: {
+        dir: "_content",
+        apiPrefix: "static-pages-api",
         fullTextSearchFields: ["title", "description"],
+        markdown: {
+            prism: {
+                theme: false,
+            },
+        },
     },
 };

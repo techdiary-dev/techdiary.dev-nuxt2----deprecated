@@ -23,12 +23,12 @@
         </header>
         <div class="mx-auto wrapper font-body">
             <div class="grid grid-cols-12 my-10">
-                <div class="col-span-12 mb-5 md:col-span-3">
+                <div class="col-span-12 mb-5 md:col-span-2">
                     <contest-guideline-pages />
                 </div>
 
                 <div
-                    class="col-span-12 p-5 mx-auto prose prose-lg shadow lg:col-span-9 max-w-none"
+                    class="col-span-12 p-5 mx-auto prose prose-lg shadow lg:col-span-10 max-w-none"
                 >
                     <nuxt-link
                         to="/"
