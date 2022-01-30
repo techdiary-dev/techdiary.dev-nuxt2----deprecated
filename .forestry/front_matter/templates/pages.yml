@@ -14,5 +14,10 @@ fields:
     required: false
   label: Page slug
   description: A unique slug for the page
+- name: thumbnail
+  type: file
+  config:
+    maxSize: 64
+  label: Thumbnail
 pages:
 - content/_contest/প্রাইস-সমূহ.md
