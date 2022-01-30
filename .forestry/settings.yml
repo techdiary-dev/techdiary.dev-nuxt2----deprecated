@@ -12,7 +12,7 @@ sections:
   templates:
   - pages
 upload_dir: static-pages-assets
-public_path: https://res.cloudinary.com/techdiary-dev/image/upload/v1643553894
+public_path: https://res.cloudinary.com/techdiary-dev/image/upload
 front_matter_path: ''
 use_front_matter_path: 
 file_template: ":filename:"
