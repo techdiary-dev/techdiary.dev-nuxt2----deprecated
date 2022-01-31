@@ -34,6 +34,10 @@ export default {
         return {
             pages: [
                 {
+                    label: "উপকার সমূহ,
+                    slug: "prices"
+                },
+                {
                     label: "নীতিমালা এবং শর্তাদি",
                     slug: "writting-rules",
                 },
