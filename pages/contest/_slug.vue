@@ -31,7 +31,7 @@
                     class="col-span-12 p-5 mx-auto prose prose-lg shadow lg:col-span-10 max-w-none"
                 >
                     <nuxt-link
-                        to="/"
+                        to="/contest"
                         class="flex items-center space-x-3 text-dark"
                     >
                         <svg
@@ -48,7 +48,7 @@
                                 d="M10 19l-7-7m0 0l7-7m-7 7h18"
                             />
                         </svg>
-                        <span>হোম পেইজ</span>
+                        <span>কনটেস্ট হোম পেইজ</span>
                     </nuxt-link>
 
                     <div>

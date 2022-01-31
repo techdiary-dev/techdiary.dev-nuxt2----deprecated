@@ -34,20 +34,12 @@ export default {
         return {
             pages: [
                 {
-                    label: "উপকার সমূহ",
-                    slug: "prices"
-                },
-                {
-                    label: "নীতিমালা এবং শর্তাদি",
-                    slug: "writting-rules",
+                    label: "লেখক এর জন্য কিছু নির্দেশনা",
+                    slug: "writting-guidelines",
                 },
                 {
                     label: "ব্লগ লিখার কিছু টিপস এন্ড ট্রিক্স",
                     slug: "writing-tricks",
-                },
-                {
-                    label: "অসাধারণ ব্লগ লেখার সাধারণ কিছু টিপস",
-                    slug: "good-article-tips",
                 },
             ],
         };
