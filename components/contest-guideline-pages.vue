@@ -34,7 +34,7 @@ export default {
         return {
             pages: [
                 {
-                    label: "উপকার সমূহ,
+                    label: "উপকার সমূহ",
                     slug: "prices"
                 },
                 {
