@@ -4,8 +4,7 @@
         :toolbars="markdownOption"
         placeholder="এখান থেকে আর্টিক্যাল লিখা শুরু করুন..."
         defaultOpen="subfield=false"
-        :imageFilter="false"
-        :imageClick="false"
+        :imageClick="$imageClick"
         :ishljs="false"
         v-model="body"
         fontSize="18px"
@@ -71,6 +70,9 @@ export default {
         },
     },
     methods: {
+        $imageClick() {
+            return false;
+        },
         async uploadImage(pos, $file) {
             try {
                 const url = await this.uploadFile(
