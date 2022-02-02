@@ -4,6 +4,7 @@
         :toolbars="markdownOption"
         defaultOpen="subfield=false"
         v-model="body"
+        fontSize="18px"
         language="en"
         @imgAdd="uploadImage"
         @imgDel="deleteImage"
