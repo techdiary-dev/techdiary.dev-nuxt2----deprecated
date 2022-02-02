@@ -31,6 +31,7 @@ export default {
         "~/plugins/resizeable-input",
         "~/plugins/multi-select",
         "~/plugins/tour.client",
+        { src: "@/plugins/editor", ssr: false },
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components

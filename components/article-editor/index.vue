@@ -138,20 +138,18 @@
         </header>
         <loader v-if="$fetchState.pending" />
         <div v-else>
-            <div class="max-w-4xl mx-auto">
-                <textarea-autosize
-                    ref="titleInput"
+            <div class="max-w-5xl px-4 mx-auto">
+                <textarea
                     maxlength="255"
-                    type="text"
-                    class="w-full my-3 text-2xl font-bold bg-transparent border-0 resize-none text-dark focus:outline-none focus:ring-0"
+                    class="w-full text-2xl font-bold bg-transparent border-0 resize-none text-dark focus:outline-none focus:ring-0"
                     placeholder="ডায়েরির শিরোনাম"
                     v-model="article.title"
+                    id="article-title"
                 />
 
                 <article-editor-thumbnail v-model="article.thumbnail" />
-
-                <div class="p-2 border-2 border-dashed">
-                    <markdown-td v-model="article.body" />
+                <div>
+                    <article-editor-md v-model="article.body" />
                 </div>
             </div>
 
@@ -240,6 +238,14 @@ import formValidation from "~/mixins/form-validation";
 
 export default {
     mixins: [upload, formValidation],
+    updated() {
+        // auto resize textarea
+        const titleElement = document.getElementById("article-title");
+        if (titleElement) {
+            titleElement.style.height = "50px";
+            titleElement.style.height = titleElement.scrollHeight + "px";
+        }
+    },
     data() {
         return {
             steps: [

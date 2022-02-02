@@ -6,4 +6,9 @@
     @apply prose-a:inline-block;
     @apply prose-p:p-0;
     @apply prose-img:inline-block;
+
+    @apply prose-h1:text-4xl;
+    @apply prose-h2:text-3xl;
+    @apply prose-h3:text-2xl;
+    @apply prose-h4:text-xl;
 }
