@@ -2,7 +2,11 @@
     <mavon-editor
         ref="md"
         :toolbars="markdownOption"
+        placeholder="এখান থেকে আর্টিক্যাল লিখা শুরু করুন..."
         defaultOpen="subfield=false"
+        :imageFilter="false"
+        :imageClick="false"
+        :ishljs="false"
         v-model="body"
         fontSize="18px"
         language="en"
@@ -68,14 +72,22 @@ export default {
     },
     methods: {
         async uploadImage(pos, $file) {
-            const url = await this.uploadFile(
-                $file,
-                "techdiary-article-covers"
-            );
-            this.$refs.md.$img2Url(pos, url);
+            try {
+                const url = await this.uploadFile(
+                    $file,
+                    "techdiary-article-covers"
+                );
+                this.$refs.md.$img2Url(pos, url);
+            } catch (error) {
+                alert("Failed to upload image");
+            }
         },
         async deleteImage([url]) {
-            await this.deleteFile(url);
+            try {
+                await this.deleteFile(url);
+            } catch (error) {
+                alert("Failed to delete image");
+            }
         },
     },
 };
@@ -95,10 +107,13 @@ textarea.auto-textarea-input {
 .v-note-wrapper {
     box-shadow: none !important;
 }
+.v-note-op {
+    border: none !important;
+}
 .v-note-wrapper
     .v-note-panel
     .v-note-edit.divarea-wrapper
     .content-input-wrapper {
-    padding-left: 0px !important;
+    padding-left: 10px !important;
 }
 </style>
