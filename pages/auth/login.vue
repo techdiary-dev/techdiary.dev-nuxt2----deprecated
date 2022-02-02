@@ -1,9 +1,7 @@
 <template>
-  <div class="w-full lg:w-6/12 ">
-    <h3 class="text-lg font-bold text-gray-600">
-      লগইন করুন
-    </h3>
-    <form
+    <div class="w-full lg:w-6/12">
+        <h3 class="text-lg font-bold text-gray-600">লগইন করুন</h3>
+        <!-- <form
       class="flex flex-col items-baseline gap-3 mt-3"
       action="#"
       @submit.prevent="handleForm"
@@ -27,38 +25,40 @@
         />
       </label>
 
-      <!-- <label class="flex items-center gap-3 ">
+       <label class="flex items-center gap-3 ">
         <input type="checkbox" />
         <p>মনে রাখুন</p>
-      </label> -->
+      </label>
 
       <button class="px-4 py-2 text-white bg-gray-700 rounded">
         লগইন
       </button>
-    </form>
-  </div>
+    </form> -->
+
+        <widgets-login-buttons />
+    </div>
 </template>
 
 <script>
 export default {
-  layout: "left-sidebar",
-  middleware: ["auth"],
-  auth: "guest",
-  data() {
-    return {
-      form: {
-        email: "",
-        password: ""
-      }
-    };
-  },
-  methods: {
-    async handleForm() {
-      this.$auth.loginWith("laravelSanctum", {
-        data: this.form
-      });
-      // await this.$axios.$post("api/auth/register", this.form);
-    }
-  }
+    layout: "left-sidebar",
+    middleware: ["auth"],
+    auth: "guest",
+    data() {
+        return {
+            form: {
+                email: "",
+                password: "",
+            },
+        };
+    },
+    methods: {
+        async handleForm() {
+            this.$auth.loginWith("laravelSanctum", {
+                data: this.form,
+            });
+            // await this.$axios.$post("api/auth/register", this.form);
+        },
+    },
 };
 </script>
