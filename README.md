@@ -1,6 +1,6 @@
-# Techdiary.dev Client
+# techdiary.dev frontend
 
-## Build Setup
+### Build Setup
 
 ```bash
 # install dependencies
