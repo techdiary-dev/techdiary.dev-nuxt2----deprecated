@@ -1,5 +1,5 @@
 <template>
-    <div class="p-3 border border-gray-200 rounded dark:border-gray-700">
+    <div class="p-3">
         <div class="mb-4 font-bold text-gray-500 dark:text-gray-300">
             সাধারন তথ্যসমূহ
         </div>
