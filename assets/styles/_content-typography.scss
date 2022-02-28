@@ -11,4 +11,12 @@
     @apply prose-h2:text-3xl;
     @apply prose-h3:text-2xl;
     @apply prose-h4:text-xl;
+
+    iframe {
+        @apply w-full aspect-[16/9];
+    }
+
+    .table-of-contents {
+        @apply bg-slate-100 py-2 dark:bg-slate-700 prose-sm md:prose-base;
+    }
 }
