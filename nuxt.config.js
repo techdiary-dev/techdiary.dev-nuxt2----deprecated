@@ -4,6 +4,7 @@ export default {
         titleTemplate: "%s | টেকডায়েরি",
         htmlAttrs: {
             lang: "bn",
+            class: "scroll-smooth",
         },
         meta: [
             { charset: "utf-8" },
