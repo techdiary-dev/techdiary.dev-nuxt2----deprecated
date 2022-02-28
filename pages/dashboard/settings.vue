@@ -1,9 +1,7 @@
 <template>
   <div class="flex flex-col space-y-4">
     <dashboard-profile-photo />
-    <dashboard-profile-info />
-    <dashboard-profile-social />
-    <dashboard-profile-readme />
+    <dashboard-profile-tabs />
   </div>
 </template>
 
@@ -12,6 +10,11 @@ export default {
   layout: "dashboard",
   head: {
     title: "সেটিং",
+  },
+  data() {
+    return {
+      activeTab: "profile",
+    };
   },
 };
 </script>
