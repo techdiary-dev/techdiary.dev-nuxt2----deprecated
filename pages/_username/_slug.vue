@@ -1,5 +1,5 @@
 <template>
-    <div class="relative py-16 overflow-hidden">
+    <div class="relative overflow-hidden md:py-16">
         <div v-if="$fetchState.pending">
             <Loader />
         </div>
@@ -14,7 +14,7 @@
             </div>
             <!-- Thumbnail end -->
 
-            <div class="mx-auto my-10 text-lg max-w-prose">
+            <div class="mx-auto my-3 text-lg md:my-10 max-w-prose">
                 <div
                     v-if="!article.isPublished"
                     class="p-4 bg-red-100 border border-red-500 border-dashed rounded-md text-slate-700"
@@ -43,13 +43,13 @@
                 </div>
 
                 <h1
-                    class="block mt-2 text-3xl font-semibold leading-10 tracking-tight text-center text-gray-900 dark:text-gray-200 sm:text-4xl"
+                    class="block mt-2 text-xl font-semibold leading-10 tracking-tight text-left text-gray-900 md:text-center md:text-3xl dark:text-gray-200 sm:text-4xl"
                 >
                     {{ article.title }}
                 </h1>
 
                 <p
-                    class="text-xl text-center text-dark-secondary dark:text-gray-400"
+                    class="text-base md:text-center md:text-lg text-dark-secondary dark:text-gray-400"
                 >
                     {{ $dayjs(article.created_at).format("DD MMMM YYYY") }}
                 </p>
@@ -67,7 +67,7 @@
                         :src="article.user.profilePhoto"
                         :alt="article.user.username"
                     />
-                    <p class="text-xl">{{ article.user.name }}</p>
+                    <p class="text-base md:text-xl">{{ article.user.name }}</p>
                 </nuxt-link>
                 <div class="flex items-center space-x-2">
                     <nuxt-link
