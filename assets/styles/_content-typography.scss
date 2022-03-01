@@ -22,4 +22,8 @@
         @apply bg-slate-100 py-2 dark:bg-slate-700 prose-sm md:prose-base;
         @apply mb-4;
     }
+
+    .heading-permalink {
+        @apply md:scroll-mt-20 scroll-mt-16;
+    }
 }
