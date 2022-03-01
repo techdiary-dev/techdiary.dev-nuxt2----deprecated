@@ -100,9 +100,7 @@ export default {
     width: 100%;
     height: 100%;
 }
-</style>
 
-<style>
 textarea.auto-textarea-input {
     @apply ring-0;
 }
@@ -111,6 +109,7 @@ textarea.auto-textarea-input {
 }
 .v-note-op {
     border: none !important;
+    @apply sticky top-0 left-0;
 }
 .v-note-wrapper
     .v-note-panel
