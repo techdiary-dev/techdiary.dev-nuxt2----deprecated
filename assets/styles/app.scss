@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+    html {
+        @apply scroll-smooth;
+    }
     body {
         @apply font-KohinoorBangla;
         @apply text-dark;
