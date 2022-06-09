@@ -10,7 +10,7 @@ sections:
   create: all
   match: "**/*"
   templates:
-  - pages
+  - blog-post
 upload_dir: static-pages-assets
 public_path: https://res.cloudinary.com/techdiary-dev/image/upload
 front_matter_path: ''
