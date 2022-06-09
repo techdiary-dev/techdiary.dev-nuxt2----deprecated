@@ -1,4 +1,13 @@
 ---
 label: Blog post
 hide_body: false
-fields: []
+fields:
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
+- name: thumbnail
+  type: file
+  config:
+    maxSize: 64
+  label: Thumbnail
