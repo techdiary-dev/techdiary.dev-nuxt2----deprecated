@@ -11,3 +11,17 @@ fields:
   config:
     maxSize: 64
   label: Thumbnail
+- name: categories
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - featured
+    - news
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Categories
