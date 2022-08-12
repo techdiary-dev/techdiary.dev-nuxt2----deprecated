@@ -120,3 +120,8 @@
 .ce-block--selected .ce-block__content {
     @apply dark:bg-gray-800;
 }
+
+
+.v-note-wrapper.shadow{
+  z-index: -10;
+}
