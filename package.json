@@ -41,7 +41,7 @@
     "@nuxtjs/color-mode": "^2.1.1",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
-    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.2",
