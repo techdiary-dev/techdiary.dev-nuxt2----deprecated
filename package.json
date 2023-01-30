@@ -24,7 +24,7 @@
     "codemirror": "^5.62.3",
     "core-js": "^3.15.1",
     "dayjs": "^1.11.7",
-    "highlight.js": "^11.4.0",
+    "highlight.js": "^11.7.0",
     "lodash.debounce": "^4.0.8",
     "mavon-editor": "^2.10.4",
     "nuxt": "^2.15.8",
