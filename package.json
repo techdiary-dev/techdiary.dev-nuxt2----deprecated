@@ -17,7 +17,7 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/cloudinary": "^1.0.3",
     "@nuxtjs/dayjs": "^1.4.1",
-    "@nuxtjs/sentry": "^5.1.6",
+    "@nuxtjs/sentry": "^7.0.3",
     "@nuxtjs/toast": "^3.3.1",
     "algoliasearch": "^4.12.1",
     "bnnum": "^1.0.6",
