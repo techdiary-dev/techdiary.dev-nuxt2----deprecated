@@ -24,7 +24,7 @@ export default {
     /**
      * Getting cookies
      */
-    await this.$axios.$get("/sanctum/csrf-cookie");
+//    await this.$axios.$get("/sanctum/csrf-cookie");
 
     /**
      * Get queries
